@@ -1,2 +1,43 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-home">
+  <div class="banner-home">
+    <div class="text-overlay">
+      <h1>Terra Trek</h1>
+      <h2>Explorez. Connectez. Vivez pleinement.</h2>
+      <div class="search-container">
+        <form action="/search" method="get">
+          <input type="text" placeholder="Rechercher..." name="query" class="search-input">
+          <button type="submit" class="search-button">Recherche</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards-container">
+    <div class="custom-card">
+      <%= image_tag 'aventure.jpg', class: 'card-img-top' %>
+      <div class="card-body">
+        <h5 class="card-title">Card 1</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn">Button</a>
+      </div>
+    </div>
+
+    <div class="custom-card">
+      <%= image_tag 'detente.jpg', class: 'card-img-top' %>
+      <div class="card-body">
+        <h5 class="card-title">Card 2</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn">Button</a>
+      </div>
+    </div>
+
+    <div class="custom-card">
+      <%= image_tag 'famille.jpg', class: 'card-img-top' %>
+      <div class="card-body">
+        <h5 class="card-title">Card 3</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn">Button</a>
+      </div>
+    </div>
+  </div>
+</div>

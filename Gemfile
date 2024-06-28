@@ -2,6 +2,19 @@ source "https://rubygems.org"
 
 ruby "3.1.2"
 
+gem "cloudinary"
+
+gem "geocoder"
+
+gem "simple_calendar", "~> 2.4"
+
+# gem "pg_search"
+
+# gem "elasticsearch"
+
+# gem "searchkick"
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 

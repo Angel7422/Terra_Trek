@@ -1,1 +1,135 @@
-// Specific CSS for your home-page
+.container-home {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.banner-home {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Ajustez la hauteur selon vos besoins */
+  background-image: url('/assets/Home-page.jpg'); /* Assurez-vous que le chemin est correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.text-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.text-overlay h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.text-overlay h2 {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.banner-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Ajustez la transparence selon vos besoins */
+  z-index: 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0; /* Ajuste l'espacement autour de la barre de recherche */
+}
+
+.search-container form {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+}
+
+.search-button {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #007bff;
+  border-left: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: space-around; /* Ajuste l'espacement entre les cartes */
+  align-items: center;
+  flex-wrap: wrap; /* Permet aux cartes de passer à la ligne si nécessaire */
+  padding: 20px; /* Ajoute un peu d'espace intérieur */
+}
+
+.custom-card {
+  margin-top: 40px;
+  width: calc(25.25% - 20px); /* Calcul de la largeur pour que trois cartes tiennent dans une ligne */
+  margin-bottom: 20px; /* Espacement entre les cartes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  border-radius: 8px; /* Coins arrondis */
+}
+
+.custom-card .card-img-top {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.custom-card .card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.custom-card .card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.custom-card .card-text {
+  margin-bottom: 15px;
+}
+
+.custom-card .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #007bff; /* Couleur de fond du bouton */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-card .btn:hover {
+  background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
