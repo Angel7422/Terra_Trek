@@ -50,6 +50,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_01_171807) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "bookings", force: :cascade do |t|
