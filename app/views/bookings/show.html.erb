@@ -1,0 +1,16 @@
+<h1>Hello from booking show</h1>
+
+<div class="booking-info-card">
+  <div class="card-info">
+    <p class="booking-description-text">Booking informations :</p>
+    <p><%= @booking.activity.location %></p>
+    <p><strong>From :</strong> <span class="booking-date"><%= Time.at(@booking.start_date).strftime("%B %d, %Y") %></span></p>
+    <p><strong>To :</strong> <span class="booking-date"><%= Time.at(@booking.end_date).strftime("%B %d, %Y") %></span></p>
+    <p><strong>Total Price:</strong> <span class="booking-price"><%= number_to_currency(@booking.total_price, unit: "€") %></span></p>
+    <p><strong>Duration:</strong> <%= @booking.duration_in_days %> days</p>
+    <p><strong>Meeting hour : <i>by arrangement</i></p>
+  </div>
+</div>
+
+
+  <h4>Terms and Conditions</h4>
