@@ -1,0 +1,22 @@
+<h1>hello from index booking</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Something</th>
+      <th>We need to add</th>
+      <th>Here</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.activity.name %></td>
+        <td><%= booking.date %></td>
+        <td>
+          <%= link_to 'Show', booking_path(booking), class: "btn-show" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
