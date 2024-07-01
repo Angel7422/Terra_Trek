@@ -5,39 +5,50 @@
       <h2>Explorez. Connectez. Vivez pleinement.</h2>
       <div class="search-container">
         <form action="/search" method="get">
-          <input type="text" placeholder="Rechercher..." name="query" class="search-input">
-          <button type="submit" class="search-button">Recherche</button>
+          <input type="text" placeholder="Ta prochaine destination ici..." name="query" class="search-input">
+          <button type="submit" class="search-button">Découvrir</button>
         </form>
       </div>
     </div>
   </div>
 
   <div class="cards-container">
-    <div class="custom-card">
-      <%= image_tag 'aventure.jpg', class: 'card-img-top' %>
-      <div class="card-body">
-        <h5 class="card-title">Card 1</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn">Button</a>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <%= image_tag 'aventure.jpg', class: 'flip-card-front'%>
+          <div class="flip-card-back">
+            <p>Découvrez votre prochaine aventure</p>
+            <!-- <a href="#" class="btn">Button</a> -->
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="custom-card">
-      <%= image_tag 'detente.jpg', class: 'card-img-top' %>
-      <div class="card-body">
-        <h5 class="card-title">Card 2</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn">Button</a>
-      </div>
-    </div>
 
-    <div class="custom-card">
-      <%= image_tag 'famille.jpg', class: 'card-img-top' %>
-      <div class="card-body">
-        <h5 class="card-title">Card 3</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn">Button</a>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <%= image_tag 'detente.jpg', class: 'flip-card-front' %>
+          <div class="flip-card-back">
+            <p>Réservez votre jour parfait</p>
+            <!-- <a href="#" class="btn">Button</a> -->
+          </div>
+        </div>
       </div>
-    </div>
+
+
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <%= image_tag 'famille.jpg', class: 'flip-card-front' %>
+          <div class="flip-card-back">
+            <p>Toujours en familles</p>
+            <!-- <a href="#" class="btn">Button</a> -->
+          </div>
+        </div>
+      </div>
   </div>
+
+  <div class="centered-btn">
+    <%= link_to 'Abonne toi et rejoins le club des cool!', '#', class: 'btn' %>
+  </div>
+
 </div>
