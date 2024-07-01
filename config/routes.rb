@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
 
-  resources :chatrooms do
+  resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
   # Defines the root path route ("/")
