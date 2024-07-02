@@ -1,0 +1,10 @@
+
+<%#= cl_image_tag @activity.pictures.url %>
+<h1><%= @activity.name %></h1>
+<p><%= @activity.description %></p>
+
+<% @activity.pictures.each do |picture| %>
+  <%= cl_image_tag picture.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<%= link_to 'Book Now', new_activity_booking_path(activity), class: 'book-now-button', data: { controller: "booking", action: "booking#open" } %>

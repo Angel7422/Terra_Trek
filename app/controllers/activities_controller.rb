@@ -1,6 +1,12 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude
+      }
+    end
   end
 
   def show
@@ -40,6 +46,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :address, :description, :photo)
+    params.require(:activity).permit(:name, :address, :description, pictures:[])
   end
 end
