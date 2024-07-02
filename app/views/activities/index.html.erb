@@ -1,1 +1,16 @@
 <p>Hello</p>
+
+<% @activities.each do |activity| %>
+  <div class="activity">
+    <h2><%= activity.name %></h2>
+    <p><%= activity.description %></p>
+    <%= link_to 'Book Now', new_activity_booking_path(activity), class: 'book-now-button', data: { controller: "booking", action: "booking#open" } %>
+  </div>
+<% end %>
+
+<div id="booking-modal" class="modal" data-controller="booking">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
