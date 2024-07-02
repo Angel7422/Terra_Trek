@@ -1,0 +1,45 @@
+.cards-activities-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-activity {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  height: 400px; /* Hauteur fixe pour toutes les cartes */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la hauteur totale */
+  overflow-y: auto; /* Permet le défilement vertical si le contenu dépasse */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-activity:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-activity h3 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+}
+
+.card-activity p {
+  color: #555;
+  font-size: 1em;
+  margin: 0;
+}
+
+.card-activity a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-activity a:hover {
+  text-decoration: underline;
+}

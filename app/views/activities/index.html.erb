@@ -1,16 +1,21 @@
-<p>Hello</p>
 
-<% @activities.each do |activity| %>
-  <div class="activity">
-    <h2><%= activity.name %></h2>
-    <p><%= activity.description %></p>
-    <%= link_to 'Book Now', new_activity_booking_path(activity), class: 'book-now-button', data: { controller: "booking", action: "booking#open" } %>
-  </div>
-<% end %>
-
-<div id="booking-modal" class="modal" data-controller="booking">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <div id="modal-body"></div>
-  </div>
+<div class="cards-activities-container">
+  <% @activities.each do |activity| %>
+    <div class="card-activity">
+      <%= link_to activity_path(activity) do %>
+        <h3><%= activity.name %></h3>
+      <% end %>
+      <p><%= activity.description %></p>
+    </div>
+  <% end %>
 </div>
+
+
+  <div id="activity-map"
+      data-controller="map"
+      data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
+      data-map-markers-value="<%= @markers.to_json %>"
+      style="width: 550px; height: 300px; margin: 0 auto;"
+      >
+  </div>
+
