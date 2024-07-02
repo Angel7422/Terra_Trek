@@ -7,7 +7,12 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: {message: @message})
+      )
+        head :ok
+      # redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
     else
       # Si la sauvegarde échoue, nous devrions recharger la vue chatroom/show
       # et afficher les erreurs. Utilisez flash.now pour afficher les erreurs
