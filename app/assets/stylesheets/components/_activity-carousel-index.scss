@@ -1,0 +1,15 @@
+/* Animation pour les éléments du carrousel */
+.carousel-item.anim-scale__inner {
+  transition: transform 1.9s cubic-bezier(.17, .85, .438, .99);
+  transition-delay: 0.5s;
+}
+
+/* Exemple de style initial avant l'activation */
+.carousel-item {
+  transform: scale(1); /* Taille normale */
+}
+
+/* Style lors de l'activation */
+.carousel-item.active.anim-scale__inner {
+  transform: scale(1.1); /* Agrandissement */
+}
