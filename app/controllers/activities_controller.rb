@@ -1,6 +1,9 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
+    if params[:city].present?
+      @activities = @activities.near(params[:city], 50)
+    end
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
