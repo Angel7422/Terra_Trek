@@ -20,6 +20,12 @@ Rails.application.routes.draw do
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
+
+  resources :profiles, only: [:show, :edit, :update] do
+    member do
+      patch :toggle_location
+    end
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end
