@@ -11,6 +11,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @booking = Booking.new # Add this line to instantiate the form on the show
   end
 
   def new
