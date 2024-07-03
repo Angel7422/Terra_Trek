@@ -9,4 +9,14 @@ class User < ApplicationRecord
   has_many :messages
   has_many :reviews
   has_many :activities
+  has_one :profile, dependent: :destroy
+
+  after_create :create_profile
+
+  private
+
+  def create_profile
+    Profile.create(user: self)
+  end
+
 end
