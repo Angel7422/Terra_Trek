@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     member do
       patch :toggle_location
     end
+
   end
   # Defines the root path route ("/")
   # root "posts#index"
