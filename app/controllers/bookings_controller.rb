@@ -9,7 +9,8 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @activity = @booking.activity
-    # @meetings = Meeting.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @activity = @booking.activity
+    @start_date = params.fetch(:start_date, @booking.start_date).to_date
   end
 
   def edit

@@ -4,6 +4,11 @@ class ActivitiesController < ApplicationController
     if params[:city].present?
       @activities = @activities.near(params[:city], 50)
     end
+
+    if params[:filters] && params[:filters][:categories].present?
+      selected_categories = params[:filters][:categories]
+      @activities = @activities.where(category: selected_categories)
+    end
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,

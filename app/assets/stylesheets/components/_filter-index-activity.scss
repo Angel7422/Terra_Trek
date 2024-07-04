@@ -1,0 +1,47 @@
+.filter-categories {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+
+  .filter-categories i {
+    margin-right: 5px;
+  }
+}
+
+.filter-form-categories {
+
+  margin-top: 20px;
+}
+
+
+.filter-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.filter-form-categories .form-group-categories {
+  margin-bottom: 15px;
+}
+
+.filter-form-categories .checkbox {
+  margin-bottom: 10px;
+}
+
+.filter-form-categories .btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.filter-form-categories .btn:hover {
+  background-color: #0056b3;
+}
