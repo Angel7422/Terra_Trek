@@ -1,5 +1,29 @@
 <!-- <div class="logo-index-activity"><%#= image_tag 'LogoTerra.png' %></div>-->
 <div class="container-index-activity">
+
+  <div data-controller="filterform">
+    <!-- Button to toggle filter form -->
+    <div class="filter-categories" data-action="click->filterform#filterForm">
+      <i class="fa fa-filter"></i>
+    </div>
+
+   <!-- Filter form -->
+    <div class="filter-container d-none" data-filterform-target="filterForm">
+      <%= simple_form_for :filters, url: activities_path, method: :get, html: { class: 'filter-form-categories' } do |f| %>
+        <div class="form-group-categories">
+          <p>Filtrer par catégorie</p>
+          <input type="hidden" value="<%= params[:city] if params[:city].present? %>" name="city">
+          <% Activity::CATEGORIES.each do |name| %>
+            <div class="checkbox">
+              <%= f.check_box :categories, { multiple: true }, name, nil %>
+              <%= f.label :categories, name %>
+            </div>
+          <% end %>
+        </div>
+        <%= f.submit 'Filtrer', class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+  </div>
  <h1 class="title-index-activity">Voici nos propositions: </h1>
 
   <div id="activity-map"
