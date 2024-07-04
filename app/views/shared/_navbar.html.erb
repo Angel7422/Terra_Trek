@@ -12,7 +12,8 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "MESSAGES", chatroom_path(1), class: "nav-link" %>
+            <% first_chatroom = Chatroom.first %>
+            <%= link_to "MESSAGES", chatroom_path(first_chatroom.id), class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
