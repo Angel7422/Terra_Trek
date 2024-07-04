@@ -7,8 +7,8 @@ export default class extends Controller {
   connect() {
     console.log("Hello from toggle_controller.js")
     console.log(this.togglableElementTarget)
-  }
 
+  }
   fire() {
     this.togglableElementTarget.classList.toggle("d-none");
   }

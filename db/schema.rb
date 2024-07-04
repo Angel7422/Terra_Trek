@@ -62,6 +62,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_02_203124) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone_number"
+    t.integer "adults"
+    t.integer "children"
   end
 
   create_table "chatrooms", force: :cascade do |t|
