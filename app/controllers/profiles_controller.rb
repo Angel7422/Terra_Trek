@@ -1,12 +1,13 @@
 class ProfilesController < ApplicationController
-  # before_action :set_profile, only: [:show, :toggle_location]
+  before_action :set_user, only: [:show, :toggle_location]
 
   def show
-    @user = User.find(params[:id])
+    @profile = @user.profile
+    # @user = User.find(params[:id])
   end
 
   def edit
-    @user = current_user
+    @profile = @user.profile
   end
 
   def update
@@ -25,4 +26,9 @@ class ProfilesController < ApplicationController
   def user_params
     params.require(:user).permit(:nickname, :email, :photo)
   end
+
+  def set_user
+    @user = current_user
+  end
+
 end

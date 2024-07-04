@@ -1,6 +1,22 @@
-<h1>Profil de <%= @user.nickname %></h1>
+<div class="container text-center container-profile-show">
+  <h1>Profil d' <strong><%= @user.nickname %></strong></h1>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719918548/Logo_Terra_fstymf.png" alt="Terra Trek">
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+    <button>Modifier</button>
+  </p>
+
+  <h4><strong>Adresse :</strong>
+    <%= @user.address  %>
+    <button>Modifier</button>
+  </h4>
+
+  <p>
+    <strong>Petite description :</strong>
+    <%= @user.description %>
+    <button>Modifier</button>
+  </p>
+</div>
