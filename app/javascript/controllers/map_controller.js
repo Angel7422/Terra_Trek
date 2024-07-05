@@ -20,6 +20,29 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
+    // Géolocalisation
+    this.geolocateButton = document.getElementById('geolocate-button')
+    this.geolocateButton.addEventListener('click', () => this.geolocate())
+  }
+
+  geolocate() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const { latitude, longitude } = position.coords
+        this.map.flyTo({ center: [longitude, latitude], zoom: 14 })
+
+        new mapboxgl.Marker()
+          .setLngLat([longitude, latitude])
+          .addTo(this.map)
+
+        // Basculer les icônes
+        document.getElementById('geolocate-icon-off').style.display = 'none'
+        document.getElementById('geolocate-icon-on').style.display = 'inline'
+      })
+    } else {
+      alert('Géolocalisation non supportée par votre navigateur.')
+    }
   }
 
   #addMarkersToMap() {
