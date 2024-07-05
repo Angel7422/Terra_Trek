@@ -38,12 +38,35 @@
     margin-bottom: 16px;
   }
 
-  button {
-    background-color: #cd8B76;
+}
+
+.container-profile-show-map {
+  text-align: center;
+
+  h5 {
+    margin-top: 25px;
+    margin-bottom: 16px;
+  }
+
+  h5 strong {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    margin-top: 16px;
+    background-image: linear-gradient(to bottom right, #e1771a, #dc985c);
     color: #000;
-    border: 1px solid #000;
+    border: 1px solid #e1771a;
     border-radius: 5px;
-    font-size: 10px;
-    padding: 2px 8px;
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+
+  #profile-map {
+    width: 100%;
+    height: 300px;
+    margin-top: 16px;
+    margin-bottom: 16px;
   }
 }
