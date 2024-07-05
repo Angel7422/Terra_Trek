@@ -8,6 +8,12 @@
   align-items: center;
   margin-bottom: 16px;
   box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.5);
+
+  #geolocate-button {
+    color:rgb(37, 37, 37);
+    background-image: linear-gradient(to bottom right, #e1771a, #d78c4a);
+    border: 2px solid #e1771a;
+  }
 }
 
 
