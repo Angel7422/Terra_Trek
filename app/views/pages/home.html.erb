@@ -1,54 +1,273 @@
 <div class="container-home">
+
   <div class="banner-home">
     <div class="text-overlay">
-      <h1>Terra Trek</h1>
+      <div class="logo-home"> <%= image_tag 'LogoTerra', class:'img-logo-home' %>
+      </div>
+
       <h2>Explorez. Connectez. Vivez pleinement.</h2>
       <div class="search-container">
         <form action=<%= activities_path %> method="get">
-          <input type="text" placeholder="Ta prochaine destination ici..." name="city" class="search-input">
+          <input type="text" placeholder="Tapez votre ville" name="city" class="search-input">
           <button type="submit" class="search-button">Découvrir</button>
         </form>
       </div>
     </div>
   </div>
 
-  <div class="cards-container">
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <%= image_tag 'aventure.jpg', class: 'flip-card-front'%>
-          <div class="flip-card-back">
-            <p>Découvrez votre prochaine aventure</p>
-            <!-- <a href="#" class="btn">Button</a> -->
-          </div>
-        </div>
-      </div>
 
-
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <%= image_tag 'detente.jpg', class: 'flip-card-front' %>
-          <div class="flip-card-back">
-            <p>Réservez votre jour parfait</p>
-            <!-- <a href="#" class="btn">Button</a> -->
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <%= image_tag 'famille.jpg', class: 'flip-card-front' %>
-          <div class="flip-card-back">
-            <p>Toujours en familles</p>
-            <!-- <a href="#" class="btn">Button</a> -->
-          </div>
-        </div>
-      </div>
+  <div class="title-container-home-baniere">
+    <h1 class="title-small archivo-black-regular">J'AI ENVIE DE </h1>
+    <h1 class="title-large archivo-black-regular">J'AI ENVIE DE </h1>
   </div>
 
-  <div class="centered-btn">
-    <%= link_to 'Rejoins le club des cool!', '#', class: 'btn' %>
+  <div class="cards-container">
+                                                      <!-- ACTIVITIES-->
+                                <!--flex top cards-->
+    <div class="home-flex-top">
+      <div class="flip-card home-flex-top-left">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1719937864/licensed-image_drpt3q.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card flip-card-text">Nature</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card home-flex-top-right">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+              style="background-position: center; background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+                    url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194091/photo-1633265512358-bb6052d48a0f_qxtzkm.jpg" %>')"
+                    >
+            <p class="flip-card-back dancing-script-card flip-card-text">Excursions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                                  <!--flex bottom cards-->
+    <div class="home-flex-bottom">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720193465/photo-1620589125117-af1d850a302b_wmcbaf.jpg" %>')"
+                      >
+              <p class="flip-card-back dancing-script-card flip-card-text">Culture</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card ">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "parc-enfants.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card flip-card-text">Pour les enfants</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "famille.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card flip-card-text">Balades</p>
+          </div>
+        </div>
+      </div>
+    </div>
+                    <!-- bouton activities -->
+    <div class="index-activities">
+    <%= link_to "En savoir plus", activities_path, class: "btn-activities" %>
+    </div>
+  </div>
+
+                                              <!-- PRODUCTEURS -->
+
+  <div class="title-container-home-baniere">
+    <h1 class="title-small archivo-black-regular"> PRODUCTEURS </h1>
+    <h1 class="title-large archivo-black-regular"> PRODUCTEURS </h1>
+  </div>
+
+  <div class="mosaique">
+    <div class="mosaiquex1" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946212/photo-1597362925123-77861d3fbac7_quxu9r.jpg" %>')">
+      <p>paragraphe</p>
+    </div>
+    <div class="mosaiquex4">
+      <div class="mosaiquex2">
+        <div class="photo-mosaiquex2"
+          style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720190659/photo-1590682680695-43b964a3ae17_ro8qb9.jpg" %>')">
+          <p>paragraphe</p>
+        </div>
+        <div class="photo-mosaiquex2"
+          style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720190683/photo-1471193945509-9ad0617afabf_gu9ru4.jpg" %>')">
+          <p>paragraphe</p>
+        </div>
+      </div>
+      <div class="mosaiquex2">
+        <div class="photo-mosaiquex2"
+          style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720204607/photo-1461354464878-ad92f492a5a0_ce9may.jpg" %>')">
+          <p>paragraphe</p>
+        </div>
+        <div class="photo-mosaiquex2"
+          style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720204615/photo-1594771804886-a933bb2d609b_l4dqp3.jpg" %>')">
+          <p>paragraphe</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+                                            <!--ARTISAN.ES-->
+  <div class="title-container-home-baniere">
+    <h1 class="title-small archivo-black-regular"> ARTISAN.ES </h1>
+    <h1 class="title-large archivo-black-regular"> ARTISAN.ES </h1>
+  </div>
+
+    <div class="cards-container">
+                                                      <!-- ARTISAIN.ES-->
+                                <!--flex top cards-->
+    <div class="home-flex-top">
+      <div class="flip-card home-flex-top-left">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207812/photo-1493106641515-6b5631de4bb9_rx2kjg.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card flip-card-text">Nature</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card home-flex-top-right">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+              style="background-position: center; background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                    url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207736/premium_photo-1679811671226-9181616d7570_fa2k2p.jpg" %>')"
+                    >
+            <p class="flip-card-back dancing-script-card flip-card-text">Excursions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+                                  <!--flex bottom cards-->
+    <div class="home-flex-bottom">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207830/photo-1675635425432-224e15ee6703_vg7bcl.jpg" %>')"
+                      >
+              <p class="flip-card-back dancing-script-card flip-card-text">Culture</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card ">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207786/photo-1661446562470-56b6b71c18df_egpied.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card flip-card-text">Pour les enfants</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207867/photo-1641582163466-e4d573078f98_owf2sm.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card flip-card-text">Balades</p>
+          </div>
+        </div>
+      </div>
+    </div>
+                    <!-- bouton activities -->
+    <div class="index-activities">
+    <%= link_to "En savoir plus", activities_path, class: "btn-activities" %>
+    </div>
+  </div>
+
+
+                                            <!--COMMUNAUTÉ-->
+  <div class="title-container-home-baniere">
+    <h1 class="title-small archivo-black-regular"> COMMUNAUTÉ </h1>
+    <h1 class="title-large archivo-black-regular"> COMMUNAUTÉ </h1>
+  </div>
+
+  <div class="cards-container">
+    <div class="home-flex-bottom">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720193465/photo-1620589125117-af1d850a302b_wmcbaf.jpg" %>')"
+                      >
+              <p class="flip-card-back dancing-script-card">Culture</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card ">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "parc-enfants.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card">Pour les enfants</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"
+                style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "famille.jpg" %>')"
+                      >
+            <p class="flip-card-back dancing-script-card">Balades</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="index-activities">
+        <%= link_to "CHATROOM", activities_path, class: "btn-activities" %>
+      </div>
+  </div>
+                          <!--bouton chatroom-->
+
+                                            <!--AGENDA-->
+  <div class="title-container-home-baniere">
+    <h1 class="title-small archivo-black-regular"> AGENDA </h1>
+    <h1 class="title-large archivo-black-regular"> AGENDA </h1>
+  </div>
+
+  <div class="card-agenda">
+    <div class="card-agendax2" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "famille.jpg" %>')">
+      <p> un paragraphe </p>
+
+    </div>
+    <div class="card-agendax2" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                      url('<%= image_path "famille.jpg" %>')">
+      <p>un paragraphe</p>
+
+    </div>
   </div>
 
 </div>
