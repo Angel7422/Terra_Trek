@@ -1,16 +1,32 @@
-<h1>Hello from booking show</h1>
+<h1><%= @activity.name %></h1>
+<p><%= @activity.description %></p>
 
-<div class="booking-info-card">
-  <div class="card-info">
-    <p class="booking-description-text">Booking informations :</p>
-    <p><%= @booking.activity.location %></p>
-    <p><strong>From :</strong> <span class="booking-date"><%= Time.at(@booking.start_date).strftime("%B %d, %Y") %></span></p>
-    <p><strong>To :</strong> <span class="booking-date"><%= Time.at(@booking.end_date).strftime("%B %d, %Y") %></span></p>
-    <p><strong>Total Price:</strong> <span class="booking-price"><%= number_to_currency(@booking.total_price, unit: "€") %></span></p>
-    <p><strong>Duration:</strong> <%= @booking.duration_in_days %> days</p>
-    <p><strong>Meeting hour : <i>by arrangement</i></p>
-  </div>
+<% @activity.pictures.each do |picture| %>
+  <%= cl_image_tag picture.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<h1>Booking Details</h1>
+
+<div>
+  <p><strong>First name:</strong> <%= @booking.first_name %></p>
+  <p><strong>Last Name:</strong> <%= @booking.last_name %></p>
+  <p><strong>Email:</strong> <%= @booking.email %></p>
+  <p><strong>Phone Number:</strong> <%= @booking.phone_number %></p>
+  <p><strong>Start Date:</strong> <%= @booking.start_date %></p>
+  <p><strong>End Date:</strong> <%= @booking.end_date %></p>
+  <p><strong>Adults:</strong> <%= @booking.adults %></p>
+  <p><strong>Children:</strong> <%= @booking.children %></p>
 </div>
 
-
-  <h4>Terms and Conditions</h4>
+<div class="calendar-container">
+  <%= month_calendar(start_date: @start_date, events: [@booking], attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
+    <div class="date">
+      <%= date.day %>
+    </div>
+    <% if date >= @booking.start_date && date <= @booking.end_date %>
+      <div class="event">
+        <%= @booking.first_name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

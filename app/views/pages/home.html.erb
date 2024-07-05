@@ -4,8 +4,8 @@
       <h1>Terra Trek</h1>
       <h2>Explorez. Connectez. Vivez pleinement.</h2>
       <div class="search-container">
-        <form action="/search" method="get">
-          <input type="text" placeholder="Ta prochaine destination ici..." name="query" class="search-input">
+        <form action=<%= activities_path %> method="get">
+          <input type="text" placeholder="Ta prochaine destination ici..." name="city" class="search-input">
           <button type="submit" class="search-button">Découvrir</button>
         </form>
       </div>

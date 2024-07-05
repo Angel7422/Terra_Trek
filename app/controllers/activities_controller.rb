@@ -1,6 +1,14 @@
 class ActivitiesController < ApplicationController
   def index
     @activities = Activity.all
+    if params[:city].present?
+      @activities = @activities.near(params[:city], 50)
+    end
+
+    if params[:filters] && params[:filters][:categories].present?
+      selected_categories = params[:filters][:categories]
+      @activities = @activities.where(category: selected_categories)
+    end
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
@@ -11,6 +19,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @booking = Booking.new # Add this line to instantiate the form on the show
   end
 
   def new

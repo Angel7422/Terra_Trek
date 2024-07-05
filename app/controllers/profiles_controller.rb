@@ -1,28 +1,38 @@
 class ProfilesController < ApplicationController
-  # before_action :set_profile, only: [:show, :toggle_location]
+  before_action :set_user, only: [:show, :toggle_location]
 
   def show
-    @user = User.find(params[:id])
+    @profile = @user.profile
+    # @user = User.find(params[:id])
   end
 
   def edit
-    @user = current_user
+    @profile = @user.profile
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to profile_path(@user)
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to profile_path(@profile), notice: 'Profil mis à jour avec succès.'
+    else
+      render :edit
+    end
   end
 
   def toggle_location
-    @profile.update(share_location: params[:proile][:share_location])
-    redirect_to @profile, notice: "Location shared status updated"
+    @profile = Profile.find(params[:id])
+    @profile.update(share_location: params[:profile][:share_location])
+    redirect_to profile_path(@profile), notice: 'Le statut de partage de la localisation a été mis à jour.'
   end
 
   private
 
-  def user_params
-    params.require(:user).permit(:nickname, :email, :photo)
+  def profile_params
+    params.require(:profile).permit(:nickname, :email, :photo, :share_location)
   end
+
+  def set_user
+    @user = current_user
+  end
+
 end

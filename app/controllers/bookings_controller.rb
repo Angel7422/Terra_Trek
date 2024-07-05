@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_activity, only: [:new, :create]
+  before_action :set_activity, only: [:create]
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -8,15 +8,9 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-  end
-
-  def new
-    @booking = Booking.new
-    if request.xhr?
-      render partial: 'form', locals: { activity: @activity, booking: @booking }, layout: false
-    else
-      render :new
-    end
+    @activity = @booking.activity
+    @activity = @booking.activity
+    @start_date = params.fetch(:start_date, @booking.start_date).to_date
   end
 
   def edit
@@ -25,10 +19,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.activity = @activity
+    @booking.activity_id = @activity.id
     @booking.user = current_user
-    if @booking.save
-      redirect_to activity_path(@activity)
+    if @booking.save!
+      redirect_to booking_path(@booking), notice: 'Reservation was successfully created.'
     else
       render :new
     end
@@ -49,7 +43,7 @@ class BookingsController < ApplicationController
   private
 
   def set_activity
-    @activity = Activity.find(params[:activity_id])
+    @activity = Activity.find(params[:activity_id].to_i)
   end
 
   def set_booking
@@ -57,6 +51,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date)
+    params.require(:booking).permit(:first_name, :last_name, :email, :phone_number, :start_date, :end_date, :adults, :children)
   end
 end

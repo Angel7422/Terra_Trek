@@ -1,12 +1,21 @@
-.navbar-lewagon {
+.navbar-terra {
   justify-content: space-between;
-  background: white;
+  background: #e1771a;
+  padding: 1rem;
+  border-radius: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
-.navbar-lewagon .navbar-collapse {
+
+.navbar-terra .navbar-collapse {
   flex-grow: 0;
+
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-terra .navbar-brand img {
+  width: 45px;
 }
