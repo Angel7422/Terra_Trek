@@ -1,22 +1,39 @@
 <div class="container text-center container-profile-show">
   <h1>Profil d' <strong><%= @user.nickname %></strong></h1>
-
-  <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719918548/Logo_Terra_fstymf.png" alt="Terra Trek">
-
+    <img src="https://res.cloudinary.com/dfwstcrkv/image/upload/v1719918548/Logo_Terra_fstymf.png" alt="Terra Trek">
+    <%= link_to "Modifier", edit_profile_path(@profile) %>
   <p>
     <strong>Email:</strong>
-    <%= @user.email %>
-    <button>Modifier</button>
+      <%= @user.email %>
   </p>
-
   <h4><strong>Adresse :</strong>
-    <%= @user.address  %>
-    <button>Modifier</button>
+      <%= @user.address  %>
   </h4>
-
   <p>
     <strong>Petite description :</strong>
-    <%= @user.description %>
-    <button>Modifier</button>
+      <%= @user.description %>
   </p>
+</div>
+
+<div class="container container-profile-show-map">
+  <h5>
+    <strong>Partager la localisation:</strong>
+      <%= form_with model: @profile, url: toggle_location_profile_path(@profile), method: :patch, local: true do |form| %>
+      <%= form.hidden_field :share_location, value: !@profile.share_location %>
+      <%= form.submit @profile.share_location ? 'Désactiver le partage de la localisation' : 'Activer le partage de la localisation', class: 'btn btn-primary' %>
+    <% end %>
+  </h5>
+  <% if @profile.share_location %>
+    <p>
+      <strong>Location:</strong>
+      <%= @user.latitude %>, <%= @user.longitude %>
+    </p>
+
+  <div id="profile-map"
+    data-controller="map"
+    data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
+    data-map-markers-value="<%= [{ lat: @user.latitude, lng: @user.longitude }].to_json %>"
+    style="width: 100%; height: 400px;">
+  </div>
+  <% end %>
 </div>
