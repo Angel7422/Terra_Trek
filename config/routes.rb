@@ -25,8 +25,13 @@ Rails.application.routes.draw do
     member do
       patch :toggle_location
     end
-
   end
+
+  resources :activities, only: [:index, :show] do
+    resources :favorites, only: [:create, :destroy]
+  end
+
+  resources :favorites, only: [:index]
   # Defines the root path route ("/")
   # root "posts#index"
 end

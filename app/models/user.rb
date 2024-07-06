@@ -6,11 +6,11 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :favorites
+  has_many :activities, through: :favorites
   has_many :messages
   has_many :reviews
   has_many :activities
   has_one :profile, dependent: :destroy
-
   after_create :create_profile
 
   private
