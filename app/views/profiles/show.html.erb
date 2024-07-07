@@ -13,6 +13,11 @@
     <strong>Petite description :</strong>
       <%= @user.description %>
   </p>
+
+  <div>
+    <%= link_to 'Favorites', favorites_path, class: 'btn'%>
+  </div>
+
 </div>
 
 <div class="container container-profile-show-map">

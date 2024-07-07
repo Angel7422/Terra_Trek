@@ -13,6 +13,5 @@
   <div data-toggle-target="togglableElement" class="d-none">
       <%= render "form", booking: @booking %>
   </div>
+  <%= button_to "Favorie", activity_favorites_path(@activity), method: :post %>
 </div>
-
-
