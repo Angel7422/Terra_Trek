@@ -8,7 +8,9 @@
       <%= favorite.activity.name %> <br>
       <%= favorite.activity.description%>
 
-      <%= button_to "Delete", activity_favorite_path(favorite.activity, favorite), method: :delete, data: {confirm: "Es-tu sur?"}%>
+      <%= button_to "Delete",
+          activity_favorite_path(favorite.activity, favorite),
+          method: :delete, data: {tubro_method: :delete, turbo_confirm: "Es-tu sur?"}%>
     </li>
 
   <% end %>

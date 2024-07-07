@@ -10,12 +10,12 @@ class FavoritesController < ApplicationController
     @activity = Activity.find(params[:activity_id])
     @favorite = Favorite.new(user: @current_user, activity: @activity)
     @favorite.save
-    redirect_to favorites_path
+    redirect_to activities_path, notice: "Favorie ajouté!"
   end
 
   def destroy
     @favorite = Favorite.find(params[:id]).destroy
-    redirect_to favorites_path, notice: "Deleted!"
+    redirect_to favorites_path, notice: "Supprimé!", status: :see_other
   end
 
   private
