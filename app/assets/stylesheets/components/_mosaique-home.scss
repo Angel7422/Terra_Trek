@@ -40,7 +40,9 @@
 }
 
 .mosaiquex1 p {
+  font-size: 35px;
   position: absolute;
+  display: flex;
   bottom: 10px;
   left: 10px;
   color: white;
@@ -52,10 +54,9 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
   width: 0;
   height: 100%;
-  background: #E1771A;
+  background: rgba(225, 119, 26, 0.5);
   transition: width 0.5s ease;
   z-index: 1;
 }
@@ -87,6 +88,7 @@
 }
 
 .photo-mosaiquex2 p {
+  font-size: 35px;
   position: absolute;
   bottom: 10px;
   left: 10px;
