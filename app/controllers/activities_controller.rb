@@ -9,10 +9,21 @@ class ActivitiesController < ApplicationController
       selected_categories = params[:filters][:categories]
       @activities = @activities.where(category: selected_categories)
     end
+    @activities = Activity.all
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude
+      }
+    end
+    @markers += @activities.map do |activity|
+      {
+        id: activity.id,
+        lat: activity.latitude,
+        lng: activity.longitude,
+        name: activity.name,
+        description: activity.description,
+        imageUrl: activity.pictures.attached? ? url_for(activity.pictures.first) : nil
       }
     end
   end
