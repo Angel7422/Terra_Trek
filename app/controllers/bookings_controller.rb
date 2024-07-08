@@ -20,11 +20,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.activity_id = @activity.id
+    @booking.activity = @activity
     @booking.user = current_user
     if @booking.save!
-      redirect_to booking_path(@booking), notice: 'Reservation was successfully created.'
+      redirect_to booking_path(@booking), notice: 'Réservation effectuée avec succès.'
     else
-      render :new
+      render 'activities/show'
     end
   end
 
