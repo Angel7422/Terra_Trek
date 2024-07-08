@@ -1,0 +1,24 @@
+.title-container-home-baniere {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.title-small {
+  position: relative;
+  z-index: 50; /* Assurez-vous que ce titre est devant */
+  font-weight: bolder;
+}
+
+.title-large {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2); /* Ajustez la mise à l'échelle selon vos besoins */
+  color: rgba(0, 0, 0, 0.1); /* Couleur plus douce pour l'effet d'ombre */
+  z-index: 1; /* Assurez-vous que ce titre est derrière */
+  pointer-events: none; /* Empêche les clics sur cet élément */
+  white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+  font-weight: bolder;
+}
