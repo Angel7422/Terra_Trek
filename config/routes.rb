@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :activities, only: [:new, :create]
+    # resources :profiles, only: [:edit, :update]
   end
 
   resources :activities, only: [:index, :show, :edit, :update, :destroy] do
@@ -21,12 +24,17 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  resources :profiles, only: [:show, :edit, :update] do
+  resources :profiles, only: [:show] do
     member do
       patch :toggle_location
     end
-
   end
+
+  resources :activities, only: [:index, :show] do
+    resources :favorites, only: [:create, :destroy]
+  end
+
+  resources :favorites, only: [:index]
   # Defines the root path route ("/")
   # root "posts#index"
 end

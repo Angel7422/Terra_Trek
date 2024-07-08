@@ -3,14 +3,19 @@ require "open-uri"
 
 User.destroy_all
 Activity.destroy_all
+Chatroom.destroy_all
 
-puts 'Creating activities...'
+puts 'Creating users...'
 
 user = User.create!(
   email: "alpha@gmail.com",
   password: "123456",
+  address: "Cannes",
+  nickname: "Alpha",
 )
 user.save
+
+puts 'Creating activities...'
 
 activity_1 = Activity.new(
   category: "Excursions",
@@ -230,4 +235,14 @@ pictures15.each do |picture|
   file = URI.open(picture)
   activity_15.pictures.attach(io:file, filename: 'activity', content_type: 'image/png')
   activity_15.save
-end
+  end
+
+  puts "Creating chatrooms..."
+
+  chatroom_1 = Chatroom.create!(name: "général")
+
+  chatroom_1.save
+
+  puts "All done! 🎉"
+
+

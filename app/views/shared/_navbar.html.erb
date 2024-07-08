@@ -12,15 +12,24 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "MESSAGES", chatroom_path(1), class: "nav-link" %>
+          <button id="geolocate-button" class="btn btn-primary">
+            <i class="fa-regular fa-location-arrow" id="geolocate-icon-off"></i>
+            <i class="fa-solid fa-location-arrow" id="geolocate-icon-on" style="display:none;"></i>
+            Ma Position
+          </button>
+          </li>
+          <li class="nav-item">
+            <% first_chatroom = Chatroom.first %>
+            <%= link_to "MESSAGERIE", chatroom_path(first_chatroom.id), class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "https://res.cloudinary.com/dfwstcrkv/image/upload/v1720088364/Avatar_fem_viqi6c.png", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon Compte", profile_path(@user.id), class: "dropdown-item" %>
-              <%= link_to "Mes favoris", "#", class: "dropdown-item" %>
+              <%= link_to "Mon Compte", user_path(@user.id), class: "dropdown-item" %>
+              <%= link_to "Activitées", activities_path, class: "dropdown-item" %>
+              <%= link_to "Mes favoris", favorites_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
