@@ -13,6 +13,10 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   after_create :create_profile
 
+  # def favorited?(activity)
+  #   @current_user.favorites.favorite_activities.include?(activity)
+  # end
+
   private
 
   def create_profile

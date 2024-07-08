@@ -1,0 +1,9 @@
+<h1>Modifier profile</h1>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :nickname %>
+  <%= f.input :email, :placeholder => 'user@domain.com' %>
+  <%= f.input :description, :as => :text %>
+  <%= f.input :address %>
+  <%= f.button :submit %>
+<% end %>
