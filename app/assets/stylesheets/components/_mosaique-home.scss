@@ -1,0 +1,112 @@
+.mosaique {
+  display: flex;
+  height: 65vh; /* Adjust as needed */
+}
+
+.index-activities {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background-color: #98C11B;
+}
+
+.btn-activities {
+  margin: 5px;
+  display: inline-block; /* Pour que le paragraphe se comporte comme un bouton */
+  padding: 10px 20px; /* Ajuster les valeurs pour la taille désirée */
+  background-color: #98C11B; /* Couleur de fond */
+  color: white; /* Couleur du texte */
+  font-size: 16px; /* Taille du texte */
+  text-align: center; /* Centrer le texte à l'intérieur */
+  text-decoration: none; /* Enlever la décoration de texte (soulignement) */
+  border-radius: 4px; /* Coins arrondis */
+  border: 2px solid whitesmoke; /* Bordure transparente pour l'effet de survol */
+  cursor: pointer; /* Changer le curseur au survol */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-activities:hover {
+  background-color: whitesmoke; /* Couleur de fond au survol */
+  border-color: rgb(231, 226, 226); /* Changer la bordure au survol */
+  color: black;
+}
+
+.mosaiquex1 {
+  flex: 1;
+  position: relative;
+  width: 80%;
+  height: 100%;
+  background-position: center;
+}
+
+.mosaiquex1 p {
+  font-size: 35px;
+  position: absolute;
+  display: flex;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  z-index: 2;
+}
+
+
+.mosaiquex1::before, .photo-mosaiquex2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(225, 119, 26, 0.5);
+  transition: width 0.5s ease;
+  z-index: 1;
+}
+
+.mosaiquex1:hover::before, .photo-mosaiquex2:hover::before {
+  width: 100%;
+}
+
+
+.mosaiquex4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-position: center;
+}
+
+.mosaiquex2 {
+  display: flex;
+  flex: 1;
+}
+
+.photo-mosaiquex2 {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+}
+
+.photo-mosaiquex2 p {
+  font-size: 35px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-position: center;
+  z-index: 2;
+}
+
+.card-agenda {
+  align-items: center; /* Centre verticalement les images */
+  display: flex;
+  height: 65vh;
+}
+
+.card-agendax2 {
+  flex: 1; /* Les deux images prennent chacune 50% de la largeur du conteneur */
+  height: 100%; /* S'assure que les images prennent toute la hauteur disponible */
+  align-items: center;
+  justify-content: center;
+  color: white; /* Optionnel, pour rendre le texte visible sur les images */
+}

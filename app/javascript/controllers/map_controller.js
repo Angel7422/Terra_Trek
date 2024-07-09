@@ -47,8 +47,28 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
+      // Créez un élément HTML pour le marker
+      const el = document.createElement('div')
+      el.className = 'custom-marker'
+      el.style.backgroundImage = 'url(https://png.pngtree.com/png-clipart/20221022/original/pngtree-orange-pin-map-png-image_8711935.png)'
+      el.style.width = '70px'
+      el.style.height = '70px'
+      el.style.backgroundSize = '100%'
+
+      // Créez le popup avec une photo
+      const popup = new mapboxgl.Popup().setHTML(`
+        <div class="pin-location">
+          <h1>${marker.name}</h1>
+          <img src="${marker.imageUrl}" style="width: 100%">
+          <button onclick="window.location.href = '/activities/${marker.id}'">Réserver</button>
+        </div>
+      `)
+
+
+      // Ajoutez le marker à la carte
+      new mapboxgl.Marker(el)
         .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
         .addTo(this.map)
     })
   }

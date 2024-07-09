@@ -198,9 +198,9 @@ end
 
 activity_13 = Activity.new(
   category: "Au marché",
-  name: "Marché Libération",
-  address: "88 Cours de la Libération, 38000 Grenoble",
-  description: "Ce marché à lieu toute l'année, le vendredi et samedi, de 6h à 13h",
+  name: "Marché des Eaux-Claires",
+  address: "1 Rue Henri Dunant,38100 Grenoble",
+  description: "Ce marché à lieu toute l'année, le mardi et jeudi, de 7h à 13h. Le samedi jusqu'à 13h30.",
   user: user
 )
 pictures13 = ['https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946008/photo-1526834527924-83a042ea7711_j4d2vp.jpg', 'https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946073/photo-1453342664588-b702c83fc822_erueoy.jpg']

@@ -13,6 +13,15 @@
   <div data-toggle-target="togglableElement" class="d-none">
       <%= render "form", booking: @booking %>
   </div>
-</div>
+  
+  <h1><%= @activity.name %></h1>
+<p><%= @activity.description %></p>
 
-<%= button_to "Favorie", activity_favorites_path(@activity), method: :post %>
+<%# <% if @user.favorited?(@activity) %>
+  <%# <p>This activity is in your favorites.</p> %>
+<%# <% else %>
+  <%# <%= link_to 'Add to Favorites', favorite_path(activity_id: @activity.id), method: :post %>
+<%# <% end %>
+
+  <%= button_to "Favorie", activity_favorites_path(@activity), method: :post %>
+</div>
