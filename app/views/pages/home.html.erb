@@ -362,15 +362,16 @@
   </div>
 
   <div class="card-agenda" id="agenda">
-    <div class="card-agendax2" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720192305/photo-1603492501465-2d1bf970b974_inrtxl.jpg" %>')">
-      <p> un paragraphe </p>
+    <div class="card-agendax2" style="background-position: bottom; background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194389/photo-1548705085-101177834f47_crdw9y.jpg" %>')">
+      <p class="dancing-script-card text-agenda flip-card-back flip-card-text">Explorez<br> Connectez <br> Vivez pleinement</p>
 
     </div>
-    <div class="card-agendax2" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    <div class="card-agendax2 flip-card-front" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720191613/photo-1506784242126-2a0b0b89c56a_vhk6r4.jpg" %>')">
-      <p>un paragraphe</p>
-
+    <%= link_to favorites_path, class: 'text-agenda' do %>
+      <p class="dancing-script-card flip-card-back flip-card-front flip-card-text ">Réservez vos activités</p>
+    <% end %>
     </div>
   </div>
 
