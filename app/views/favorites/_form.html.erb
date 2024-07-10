@@ -1,0 +1,56 @@
+<%= simple_form_for [@activity, @booking], data: { turbo: false } do |form| %>
+  <% if @booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+      <ul>
+        <% @booking.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :first_name, class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :last_name, class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :email, class: "form-label" %>
+    <%= form.email_field :email, class: "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :phone_number, class: "form-label" %>
+    <%= form.telephone_field :phone_number, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :start_date, "Start date", class: "form-label" %>
+    <%= form.text_field :start_date, class: "form-control", data: { controller: "datepicker" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :end_date, "End date", class: "form-label" %>
+    <%= form.text_field :end_date, class: "form-control", data: { controller: "datepicker" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :adults, class: "form-label" %>
+    <%= form.number_field :adults, class: "form-control", min: 0, required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :children, class: "form-label" %>
+    <%= form.number_field :children, class: "form-control", min: 0, required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit 'Submit your reservation', class: "btn btn-primary" %>
+  </div>
+<% end %>

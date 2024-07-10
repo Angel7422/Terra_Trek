@@ -11,6 +11,10 @@
       <%= button_to "Delete",
           activity_favorite_path(favorite.activity, favorite),
           method: :delete, data: {tubro_method: :delete, turbo_confirm: "Es-tu sur?"}%>
+
+        <button class="btn btn-primary mb-3" data-action="click->toggle#fire">Book now</button>
+        <%= render "form", booking: @booking %>
+  </div>
     </li>
 
   <% end %>
