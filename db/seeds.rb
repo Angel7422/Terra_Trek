@@ -123,7 +123,7 @@ activity_8 = Activity.new(
   name: "Square Reynaldo Hahn",
   address: "Square Reynaldo Hahn, 06400 Cannes",
   latitude: 43.55135, longitude: 7.01275,
-  description: "Jolie parc de jeux pour enfants, avec tobogans et jeux à proximité de la mer.",
+  description: "Joli parc de jeux pour enfants, avec tobogans et jeux à proximité de la mer.",
   user: user
 )
 pictures8 = ['https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946008/photo-1526834527924-83a042ea7711_j4d2vp.jpg', 'https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946073/photo-1453342664588-b702c83fc822_erueoy.jpg' ]
@@ -237,6 +237,92 @@ pictures15.each do |picture|
   activity_15.save
   end
 
+activity_16 = Activity.new(
+  category: "Culture",
+  name: "Quiveutpister",
+  address: "Place Bellecour, 69005 Lyon",
+  latitude: 45.7542,
+  longitude: 4.8309,
+  description: "Envie d’aventure au coeur de Lyon ? Alors, menez l’enquête dans les rues lyonnaises et découvrez des lieux connus et méconnus avec les jeux de piste QuiveutpisterLyon.",
+  user: user
+)
+pictures16 = ['https://res.cloudinary.com/dafkgjhwt/image/upload/v1720533920/5b8f8fe4-7fe2-4c3d-b25e-8bd7dd48decc.png', 'https://res.cloudinary.com/dafkgjhwt/image/upload/v1720534045/c60c9956-dab2-434a-bed8-c5b9491cc04a.png']
+pictures16.each do |picture|
+  file = URI.open(picture)
+  activity_16.pictures.attach(io:file, filename: 'activity', content_type: 'image/png')
+  activity_16.save
+end
+
+activity_17 = Activity.new(
+  category: "Nature",
+  name: "Le bois des Lutins",
+  address: "La combe du loup, D 518 - 38790 Diémoz",
+  latitude: 45.5367,
+  longitude: 5.1103,
+  description: "Profitez d’une sortie à la journée pour découvrir plus de 25 attractions telles que le Village de Cabanes dans le Monde d’En haut, la Luge des lutins, la Grande Mer de filets, le Kioskamusik… sans oublier en 2024, le « Secret des trolls » l’attraction la plus immersive et imposante (200m2) du parc, mais aussi la première attraction 'augmentée', avec des décors époustouflants (champignons magiques, minerais précieux) et des effets sonores et lumineux.",
+  user: user
+)
+pictures17 = ['https://res.cloudinary.com/dafkgjhwt/image/upload/v1720535873/b9a3def7-0bad-4292-810f-4901d389e021.png', 'https://res.cloudinary.com/dafkgjhwt/image/upload/v1720535938/1b62eaf6-843c-423a-8b48-d16e67f2ec75.png']
+pictures17.each do |picture|
+  file = URI.open(picture)
+  activity_17.pictures.attach(io: file, filename: 'activity', content_type: 'image/png')
+  activity_17.save
+end
+
+activity_18 = Activity.new(
+  category: "Au Marché",
+  name: "Food Tour 'No Diet Club'",
+  address: "Place de la Croix-Rousse",
+  latitude: 45.774503,
+  longitude: 4.831871,
+  description: "Partez pour une expérience culinaire unique à l'occasion d'une balade au cœur de Lyon. Vous profiterez de spécialités locales bien sûr mais pas seulement ! Vous allez adorer l'ambiance décalée de ce quartier et la quantité de nourriture que vous aurez la chance de déguster.
+  Votre 'No Diet' Food Tour
+Durée : 3 heures - Une dizaine de produits dégustés - Explications culturelles
+Dégustations de nombreux produits dans la Vieille Ville
+Anecdotes de votre guide sur la ville et la région
+Exemples de mets dégustés : praluline, plateau de charcuteries et de fromages de la région, un burger exceptionnel, coussins à la noisette.
+Lors de cette activité, vous profiterez des meilleurs plats, sélectionnés par les guides pour votre plus grand plaisir. Souvenirs garantis pour tous les participants !",
+  user: user
+)
+pictures18 = ['https://res.cloudinary.com/dafkgjhwt/image/upload/v1720594120/0c7b4eb9-ae37-4c0f-b48d-8751b7b86a51.png', 'https://res.cloudinary.com/dafkgjhwt/image/upload/v1720594211/ad90d5f3-73ce-4b44-b322-51af24181a07.png']
+pictures18.each do |picture|
+  file = URI.open(picture)
+  activity_18.pictures.attach(io: file, filename: 'activity', content_type: 'image/png')
+  activity_18.save
+end
+
+activity_19 = Activity.new(
+  category: "Producteurs",
+  name: "La Ferme de Charly",
+  address: "1232, Route de Saint-Abdon 69390 Charly",
+  latitude: "45.6644778",
+  longitude: "4.7934463",
+  description: "C'est ici, dans notre magasin, que vous trouverez les denrées de producteurs locaux, en plus de nos fromages. Les produits proposés varient selon la période et les saisons. Nous pouvons ainsi vous proposer des paniers riches et variés qui raviront vos hôtes et surtout votre famille ! Vous trouverez des fruits et légumes de saison, de la charcuterie artisanale, de la volaille et bien plus encore. A vous de venir compléter cette liste !",
+  user: user
+)
+pictures19 = ["https://res.cloudinary.com/dafkgjhwt/image/upload/v1720596292/34484e74-4568-4fc7-9cd1-60b3b600f893.png", "https://res.cloudinary.com/dafkgjhwt/image/upload/v1720596322/ac1c7a68-6b74-45cd-bbed-7ad441911da6.png"]
+pictures19.each do |picture|
+  file = URI.open(picture)
+  activity_19.pictures.attach(io: file, filename: 'activity', content_type: 'image/png')
+  activity_19.save
+end
+
+activity_20 = Activity.new(
+  category: "Balades",
+  name: "Ascension du Mont Thou",
+  address: "Mont Thou, 69450 Saint-Cyr-au-Mont-d'Or, France",
+  latitude: "45.8416216",
+  longitude: "4.7972667",
+  description: "Depuis Poleymieux-au-Mont-d'Or, il va falloir grimper un peu pour atteindre le sommet du Mont Thou, le deuxième plus haut des Monts d'Or avec ses 625 mètres d’altitude. Récompense assurée une fois là-haut, face au sublime panorama qui s’offre à toi : une vue incroyable sur Lyon avec les Alpes en arrière plan !",
+  user: user
+)
+pictures20 = ["https://res.cloudinary.com/dafkgjhwt/image/upload/v1720597295/8c828224-b158-4b6e-b4ff-e619a9d6f592.png", "https://res.cloudinary.com/dafkgjhwt/image/upload/v1720597311/943fb625-4646-4838-9ec6-85f340cc3c45.png"]
+pictures20.each do |picture|
+  file = URI.open(picture)
+  activity_20.pictures.attach(io: file, filename: 'activity', content_type: 'image/png')
+  activity_20.save
+end
+
   puts "Creating chatrooms..."
 
   chatroom_1 = Chatroom.create!(name: "général")
@@ -244,5 +330,3 @@ pictures15.each do |picture|
   chatroom_1.save
 
   puts "All done! 🎉"
-
-
