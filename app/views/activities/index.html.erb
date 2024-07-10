@@ -1,45 +1,18 @@
 <div class="header-section">
   <h1>Explorez une variété d'activités</h1>
-  <p>Explorez. Connectez. Vivez plainement.</p>
+  <p>Explorez. Connectez. Vivez pleinement.</p>
 </div>
 
-<div class="container-index-activity">
-  <div class="category-menu">
-    <ul>
-      <li class="category-link">
-        <%= link_to activities_path(filters: { categories: "Nature" }) do %>
-          Nature
-        <% end %>
-      </li>
-      <li class="category-link">
-        <%= link_to activities_path(filters: { categories: "Excursions" }) do %>
-          Excursions
-        <% end %>
-      </li>
-      <li class="category-link">
-        <%= link_to activities_path(filters: { categories: "Culture" }) do %>
-          Culture
-        <% end %>
-      </li>
-      <li class="category-link">
-        <%= link_to activities_path(filters: { categories: "Pour les enfants" }) do %>
-          Pour les enfants
-        <% end %>
-      </li>
-      <li class="category-link">
-        <%= link_to activities_path(filters: { categories: "Balades" }) do %>
-          Balades
-        <% end %>
-      </li>
-    </ul>
-  </div>
+<%# <div class="container-index-activity">
+  <div class="new-icon-container">
+    <div class="new-icon-square"><a href="#decouvrez"><i class="new-icon fas fa-skiing"></i></a></div>
+    <div class="new-icon-square"><a href="#producteurs"><i class="new-icon fas fa-leaf"></i></a></div>
+    <div class="new-icon-square"><a href="#artisanies"><i class="new-icon fas fa-paint-brush"></i></a></div>
+    <a href="#communaute"><div class="new-icon-square"><i class="new-icon fas fa-users"></i></div></a>
+    <div class="new-icon-square"><a href="#agenda"><i class="new-icon fa-solid fa-calendar-days"></i></a></div>
+  </div> %>
 
   <div class="content-section">
-    <div id="activity-map" data-controller="map"
-      data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
-      data-map-markers-value="<%= @markers.to_json %>">
-    </div>
-
     <div class="cards-activities-container">
       <% if @activities.empty? %>
         <h2>No activities available</h2>
@@ -72,4 +45,10 @@
       <% end %>
     </div>
   </div>
+</div>
+
+<div id="activity-map" data-controller="map"
+  data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
+  data-map-markers-value="<%= @markers.to_json %>">
+  <!-- Map content -->
 </div>
