@@ -1,11 +1,12 @@
 html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .main-content {
   min-height: 100vh; /* Assure que le contenu principal prend au moins la hauteur de la fenêtre */
-  padding-bottom: 50px; /* Ajoute une marge en bas pour laisser de l'espace pour le footer */
+  padding-bottom: 100px; /* Ajoute une marge en bas pour laisser de l'espace pour le footer */
 }
 
 
@@ -25,7 +26,7 @@ html, body {
 
 }
 
-.flip-card-inner a {
+.flip-card-inner a, .text-agenda {
   text-decoration: none !important;
 }
 

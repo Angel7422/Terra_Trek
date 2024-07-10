@@ -6,6 +6,7 @@
   position: fixed; /* Position relative pour permettre des ajustements si nécessaire */
   width: 100%; /* Assure que le footer prend toute la largeur */
   bottom: 0; /* Optionnel: place le footer au bas de la page si vous utilisez position: fixed */
+  z-index: 0;
 }
 
 .footer-container {
