@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def near_me
+    @users = User.find(params[:id])
+    @users = User.all
+  end
+
   private
 
   def set_user

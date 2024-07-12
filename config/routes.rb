@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :users do
+    member do
+      get 'near_me'
+    end
     resources :activities, only: [:new, :create]
     # resources :profiles, only: [:edit, :update]
   end
