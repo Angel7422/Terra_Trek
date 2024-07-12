@@ -1,47 +1,61 @@
-.filter-categories {
-  cursor: pointer;
-  font-size: 1.5em;
-  color: #007bff;
+/* Conteneur du filtre */
+.filter-container {
+  position: fixed; /* Fixe le conteneur à droite de l'écran */
+  top: 60px; /* Distance du haut de la fenêtre, ajustez selon vos besoins */
+  right: 0; /* Positionne le conteneur à droite */
+  width: 300px; /* Largeur du conteneur */
+  max-height: calc(100vh - 60px); /* Hauteur maximale en fonction de la hauteur de la fenêtre */
+  overflow-y: auto; /* Ajoute un défilement vertical si le contenu dépasse la hauteur du conteneur */
+  background-color: #fff; /* Fond blanc pour le conteneur */
+  border: 1px solid #ddd; /* Bordure légère autour du conteneur */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour le conteneur */
+  z-index: 1000; /* Assure que le conteneur est au-dessus des autres éléments */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transition douce pour l'affichage/masquage */
+}
+
+/* Masquer le conteneur lorsque la classe 'hidden' est appliquée */
+.hidden {
+  display: none;
+}
+
+/* Style du formulaire de filtres */
+.filter-form-categories {
+  padding: 20px; /* Espacement intérieur du conteneur */
+}
+
+/* Style pour le groupe de champs du formulaire */
+.form-group-categories {
+  margin-bottom: 20px; /* Espacement entre les éléments du formulaire */
+}
+
+/* Style pour les éléments de la checklist */
+.filter-form-categories .checkbox {
+  margin-bottom: 10px; /* Espacement entre les éléments de la checklist */
   display: flex;
   align-items: center;
-
-  .filter-categories i {
-    margin-right: 5px;
-  }
 }
 
-.filter-form-categories {
-
-  margin-top: 20px;
-}
-
-
-.filter-container {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-
-.filter-form-categories .form-group-categories {
-  margin-bottom: 15px;
-}
-
-.filter-form-categories .checkbox {
-  margin-bottom: 10px;
-}
-
-.filter-form-categories .btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
+/* Style pour le label de la checklist */
+.filter-form-categories .checkbox label {
+  margin-left: 10px; /* Espacement entre la case à cocher et le label */
   font-size: 1em;
-  cursor: pointer;
+  color: #333;
 }
 
-.filter-form-categories .btn:hover {
-  background-color: #0056b3;
+/* Style pour le bouton de soumission du formulaire */
+.custom-btn {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: none; /* Supprime la bordure du bouton */
+  padding: 10px 15px; /* Espacement intérieur du bouton */
+  font-size: 1em; /* Taille de la police du bouton */
+  cursor: pointer; /* Curseur de la souris en forme de main */
+  border-radius: 4px; /* Coins arrondis du bouton */
+  text-align: center; /* Centre le texte à l'intérieur du bouton */
+  display: inline-block; /* Assure que le bouton se comporte comme un bloc en ligne */
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Couleur de fond du bouton au survol */
 }
