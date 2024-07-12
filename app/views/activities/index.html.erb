@@ -1,28 +1,51 @@
-<div class="header-section">
-  <h1>Explorez une variété d'activités</h1>
-  <p>Explorez. Connectez. Vivez pleinement.</p>
-</div>
+<div class="container-index-activity">
 
-<%# <div class="container-index-activity">
-  <div class="new-icon-container">
-    <div class="new-icon-square"><a href="#decouvrez"><i class="new-icon fas fa-skiing"></i></a></div>
-    <div class="new-icon-square"><a href="#producteurs"><i class="new-icon fas fa-leaf"></i></a></div>
-    <div class="new-icon-square"><a href="#artisanies"><i class="new-icon fas fa-paint-brush"></i></a></div>
-    <a href="#communaute"><div class="new-icon-square"><i class="new-icon fas fa-users"></i></div></a>
-    <div class="new-icon-square"><a href="#agenda"><i class="new-icon fa-solid fa-calendar-days"></i></a></div>
-  </div> %>
+  <div data-controller="filterform">
+    <!-- Button to toggle filter form -->
+    <div class="filter-categories" data-action="click->filterform#toggleFilterForm">
+      <i class="fa fa-filter"></i>
+    </div>
+    <div class="header-section">
+      <h1>Explorez une variété d'activités</h1>
+    </div>
+
+    <!-- Filter form -->
+    <div class="filter-container hidden" data-filterform-target="filterForm">
+      <div class="filter-form-categories">
+        <%= simple_form_for :filters, url: activities_path, method: :get, html: { class: 'filter-form-categories' } do |f| %>
+          <div class="form-group-categories">
+            <p>Filtrer par catégorie</p>
+            <input type="hidden" value="<%= params[:city] if params[:city].present? %>" name="city">
+            <% Activity::CATEGORIES.each do |name| %>
+              <div class="checkbox">
+                <%= f.check_box :categories, { multiple: true }, name, nil %>
+                <%= f.label :categories, name %>
+              </div>
+            <% end %>
+          </div>
+          <%= f.submit 'Filtrer', class: 'custom-btn' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
   <div class="content-section">
+    <div id="activity-map" data-controller="map"
+      data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
+      data-map-markers-value="<%= @markers.to_json %>">
+    </div>
+
     <div class="cards-activities-container">
       <% if @activities.empty? %>
-        <h2>Désolé, l'activité que vous avez choisi n'est pas disponible.</h2>
+        <h1 class="title-index-activity">Désolée, votre activité n'est pas disponible</h1>
       <% else %>
         <% @activities.each do |activity| %>
-          <div class="activity-card">
-            <div class="carousel slide" id="carousel-<%= activity.id %>" data-ride="carousel">
+          <div class="card-activity">
+            <!-- Bootstrap Carousel -->
+            <div id="carousel-<%= activity.id %>" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <% activity.pictures.each_with_index do |picture, index| %>
-                  <div class="carousel-item <%= 'active' if index == 0 %>">
+                  <div class="carousel-item <%= 'active' if index == 0 %> anim-scale__inner">
                     <%= cl_image_tag picture.key, class: "d-block w-100", height: 300, width: 400, crop: :fill %>
                   </div>
                 <% end %>
@@ -36,19 +59,142 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
+            <!-- End of Bootstrap Carousel -->
             <%= link_to activity_path(activity) do %>
-              <h3><%= activity.name %></h3>
-              <p><%= truncate(activity.description, length: 100) %></p>
+              <h3 class="name-activity"><%= activity.name %></h3>
+              <p class="description-activity"><%= truncate(activity.description, length: 100) %></p>
             <% end %>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
+
 </div>
 
-<div id="activity-map" data-controller="map"
-  data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
-  data-map-markers-value="<%= @markers.to_json %>">
-  <!-- Map content -->
+
+
+<!--<div class="header-section">
+  <h1>Explorez une variété d'activités</h1>
+
 </div>
+
+<div data-controller="filterform">
+  <-- Icône de filtre -->
+<!--  <div class="filter-categories" data-action="click->filterform#toggleFilterForm">
+    <i class="fas fa-filter"></i>
+  </div>
+
+  <-- Conteneur de filtres -->
+<!--  <div class="filter-form hidden" data-filterform-target="filterForm">
+    <div class="filter-form-categories">
+      <%#= form_with url: activities_path, method: :get, local: true do |form| %>-->
+<!--          <input type="hidden" value="<%#= params[:city] if params[:city].present? %>" name="city">
+        <div class="form-group-categories">
+          <%#= form.label :search, "Search" %>-->
+          <%#= form.text_field :search, class: "form-control" %>
+<!--    </div>
+
+        <div class="form-group-categories">
+          <%# Activity::CATEGORIES.each do |category| %>-->
+<!--            <div class="checkbox">-->
+                  <%#= form.check_box :categories, { multiple: true, class: "form-check-input" }, category, nil %>
+                  <%#= form.label category, class: "form-check-label" %>
+<!--            </div>-->
+          <%# end %>
+<!--    </div>
+
+        <div class="form-group-categories">
+          <%#= form.submit "Filter", class: "btn" %>-->
+<!--        </div>-->
+      <%# end %>
+<!--    </div>
+  </div>
+
+-->
+
+
+<%# <div class="container-index-activity">
+  <div class="new-icon-container">
+    <div class="new-icon-square"><a href="#decouvrez"><i class="new-icon fas fa-skiing"></i></a></div>
+    <div class="new-icon-square"><a href="#producteurs"><i class="new-icon fas fa-leaf"></i></a></div>
+    <div class="new-icon-square"><a href="#artisanies"><i class="new-icon fas fa-paint-brush"></i></a></div>
+    <a href="#communaute"><div class="new-icon-square"><i class="new-icon fas fa-users"></i></div></a>
+    <div class="new-icon-square"><a href="#agenda"><i class="new-icon fa-solid fa-calendar-days"></i></a></div>
+  </div> %>
+
+  <!--<div class="content-section">
+    <div class="cards-activities-container">
+      <%# if @activities.empty? %>-->
+<!--        <h2>Désolé, l'activité que vous avez choisi n'est pas disponible.</h2>-->
+      <%# else %>
+        <%# @activities.each do |activity| %>
+<!--          <div class="activity-card">
+            <div class="carousel slide" id="carousel-<%#= activity.id %>" data-ride="carousel">
+              <div class="carousel-inner">
+                <%# activity.pictures.each_with_index do |picture, index| %>-->
+<!--                  <div class="carousel-item <%#= 'active' if index == 0 %>">-->
+                    <%#= cl_image_tag picture.key, height: 300, width: 400, crop: :fill %>
+<!--                  </div>-->
+                <%# end %>
+<!--              </div>
+              <a class="carousel-control-prev" href="#carousel-<%#= activity.id %>" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carousel-<%#= activity.id %>" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div class="card-text">
+              <%#= link_to activity_path(activity) do %>-->
+<!--                <h3><%#= activity.name %></h3>
+                <p><%#= truncate(activity.description, length: 100) %></p>
+              <%# end %>-->
+<!--            </div>
+          </div>
+        <%# end %>-->
+      <%# end %>
+<!--    </div>
+  </div>
+
+
+<div id="activity-map" data-controller="map"
+  data-map-api-key-value="<%#= ENV['MAPBOX_TOKEN'] %>"
+  data-map-markers-value="<%#= @markers.to_json %>">
+  <-- Map content -->
+<!--</div>
+-->
+
+
+<!--<div class="container-index-activity">
+    <div class="category-menu">
+      <ul>
+        <li class="category-link">
+          <%#= link_to activities_path(filters: { categories: "Nature" }) do %>-->
+<!--            Nature-->
+          <%# end %>
+<!--        </li>
+        <li class="category-link">
+          <%#= link_to activities_path(filters: { categories: "Excursions" }) do %>-->
+<!--            Excursions-->
+          <%# end %>
+<!--        </li>
+        <li class="category-link">
+          <%#= link_to activities_path(filters: { categories: "Culture" }) do %>-->
+<!--            Culture-->
+          <%# end %>
+<!--        </li>
+        <li class="category-link">
+          <%#= link_to activities_path(filters: { categories: "Pour les enfants" }) do %>-->
+<!--            Pour les enfants-->
+          <%# end %>
+<!--        </li>
+        <li class="category-link">
+          <%#= link_to activities_path(filters: { categories: "Balades" }) do %>-->
+<!--            Balades-->
+          <%# end %>
+<!--        </li>
+      </ul>
+    </div>-->
