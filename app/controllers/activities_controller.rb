@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
       selected_categories = params[:filters][:categories]
       @activities = @activities.where(category: selected_categories)
     end
-    @activities = Activity.all
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,

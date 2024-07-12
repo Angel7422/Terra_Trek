@@ -10,47 +10,47 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :first_name, class: "form-label" %>
-    <%= form.text_field :first_name, class: "form-control", required: true %>
+    <%= form.text_field :first_name, class: "form-control narrow-input", required: true %>
   </div>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :last_name, class: "form-label" %>
-    <%= form.text_field :last_name, class: "form-control", required: true %>
+    <%= form.text_field :last_name, class: "form-control narrow-input", required: true %>
   </div>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :email, class: "form-label" %>
-    <%= form.email_field :email, class: "form-control", required: true %>
+    <%= form.email_field :email, class: "form-control narrow-input", required: true %>
   </div>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :phone_number, class: "form-label" %>
-    <%= form.telephone_field :phone_number, class: "form-control" %>
+    <%= form.telephone_field :phone_number, class: "form-control narrow-input" %>
   </div>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :start_date, "Start date", class: "form-label" %>
-    <%= form.text_field :start_date, class: "form-control", data: { controller: "datepicker" } %>
+    <%= form.text_field :start_date, class: "form-control narrow-input datepicker" %>
   </div>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :end_date, "End date", class: "form-label" %>
-    <%= form.text_field :end_date, class: "form-control", data: { controller: "datepicker" } %>
+    <%= form.text_field :end_date, class: "form-control narrow-input datepicker" %>
   </div>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :adults, class: "form-label" %>
-    <%= form.number_field :adults, class: "form-control", min: 0, required: true %>
+    <%= form.number_field :adults, class: "form-control narrow-input", min: 0, required: true %>
   </div>
 
-  <div class="mb-3">
+  <div class="form-field">
     <%= form.label :children, class: "form-label" %>
-    <%= form.number_field :children, class: "form-control", min: 0, required: true %>
+    <%= form.number_field :children, class: "form-control narrow-input", min: 0, required: true %>
   </div>
 
-  <div class="mb-3">
-    <%= form.submit 'Submit your reservation', class: "btn btn-primary" %>
+  <div class="form-field">
+    <%= form.submit 'Terminer ma réservation', class: "btn btn-primary narrow-input" %>
   </div>
 <% end %>

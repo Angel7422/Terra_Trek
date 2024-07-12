@@ -2,32 +2,46 @@
 
   <div class="banner-home">
     <div class="text-overlay">
-      <div class="logo-home"> <%= image_tag 'LogoTerra', class:'img-logo-home' %>
+      <div class="logo-container">
+        <div class="logo-home"> <%= image_tag 'LogoTerra', class:'img-logo-home' %>
+        </div>
+        <div class="text-logo">
+          <h2 class="dancing-script-card">Explorez. Connectez. Vivez pleinement.</h2>
+        </div>
       </div>
 
     <div class="video-background">
       <video autoplay muted loop id="bgVideo">
         <source src="https://res.cloudinary.com/dfwstcrkv/video/upload/v1720444601/0708_2_pj1sfp.mov" type="video/mp4">
       </video>
+      <!--<div class="video-overlay"></div>-->
     </div>
-      <!--<h2>Explorez. Connectez. Vivez pleinement.</h2>-->
+
       <div class="search-container">
         <form action=<%= activities_path %> method="get">
-          <input type="text" placeholder="Tapez votre ville" name="city" class="search-input">
+          <input type="text" placeholder="Votre ville ici" name="city" class="search-input archivo-black-regular">
           <button type="submit" class="search-button">Découvrir</button>
         </form>
       </div>
+
+  <div class="icon-container-home">
+    <div class="icon-square"><a href="#decouvrez"><i class="icon-class fas fa-skiing"></i></a></div>
+    <div class="icon-square"><a href="#producteurs"><i class="icon-class fas fa-leaf"></i></a></div>
+    <div class="icon-square"><a href="#artisanies"><i class="icon-class fas fa-paint-brush"></i></a></div>
+    <a href="#communaute"><div class="icon-square"><i class="icon-class fas fa-users"></i></div></a>
+    <div class="icon-square"><a href="#agenda"><i class="icon-class fa-solid fa-calendar-days"></i></a></div>
+  </div>
+
     </div>
   </div>
-<br>
-<br>
+
 
   <div class="title-container-home-baniere">
-    <h1 class="title-small archivo-black-regular" id="decouvrez"> DECOUVREZ </h1>
+    <h1 class="title-small archivo-black-regular"> DECOUVREZ </h1>
     <h1 class="title-large archivo-black-regular"> DECOUVREZ </h1>
   </div>
-<a href="#producteurs"> producteurs </a>
-  <div class="cards-container">
+
+  <div class="cards-container" id="decouvrez">
                                                       <!-- ACTIVITIES-->
                                 <!--flex top cards-->
     <div class="home-flex-top">
@@ -78,7 +92,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Pour les enfants" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "parc-enfants.jpg" %>')"
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720551851/DD42E002-0AF3-4CC0-9C75-A279AC5B8ADC_1_105_c_u0quyz.jpg" %>')"
                       >
             <p class="flip-card-back dancing-script-card flip-card-text">Pour les enfants</p>
           </div>
@@ -100,68 +114,74 @@
       </div>
     </div>
                     <!-- bouton activities -->
-    <div class="index-activities">
-    <%= link_to "En savoir plus", activities_path, class: "btn-activities" %>
+    <div class="index-activities archivo-black-regular">
+    <%= link_to "Toutes nos propositions", activities_path, class: "btn-activities" %>
     </div>
   </div>
 
                                               <!-- PRODUCTEURS -->
 
   <div class="title-container-home-baniere">
-    <h1 class="title-small archivo-black-regular" id="producteurs"> PRODUCTEURS </h1>
+    <h1 class="title-small archivo-black-regular"> PRODUCTEURS </h1>
     <h1 class="title-large archivo-black-regular"> PRODUCTEURS </h1>
   </div>
 
-  <div class="mosaique">
-  <%#= link_to :controller => "activities", :filters => {:categories => "Producteurs" } do %>
+  <div class="mosaique" id="producteurs">
+
     <div class="mosaiquex1" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946212/photo-1597362925123-77861d3fbac7_quxu9r.jpg" %>')">
-      <p class=" dancing-script-card">Tradition</p>
+      <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
+      <p class="dancing-script-card">Tradition</p>
+      <% end %>
     </div>
-    <%# end %>
+
     <div class="mosaiquex4">
       <div class="mosaiquex2">
-      <%#= link_to :controller => "activities", :filters => {:categories => "Producteurs" } do %>
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720190659/photo-1590682680695-43b964a3ae17_ro8qb9.jpg" %>')">
-          <p class=" dancing-script-card">Passion</p>
+          <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
+            <p class=" dancing-script-card">Passion</p>
+           <% end %>
         </div>
-        <%# end %>
-        <%#= link_to :controller => "activities", :filters => {:categories => "Producteurs" } do %>
+
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720190683/photo-1471193945509-9ad0617afabf_gu9ru4.jpg" %>')">
-          <p class=" dancing-script-card">Circuit court</p>
+          <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
+            <p class=" dancing-script-card">Circuit court</p>
+          <% end %>
         </div>
-        <%# end %>
+
       </div>
       <div class="mosaiquex2">
-      <%#= link_to :controller => "activities", :filters => {:categories => "Producteurs" } do %>
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720204607/photo-1461354464878-ad92f492a5a0_ce9may.jpg" %>')">
-          <p class=" dancing-script-card">Sans additifs</p>
+          <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
+            <p class=" dancing-script-card">Sans additifs</p>
+          <% end %>
         </div>
-        <%# end %>
-        <%#= link_to :controller => "activities", :filters => {:categories => "Producteurs" } do %>
+
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720204615/photo-1594771804886-a933bb2d609b_l4dqp3.jpg" %>')">
+          <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
           <p class=" dancing-script-card">Commerce équitable</p>
+          <% end %>
         </div>
-        <%# end %>
+
       </div>
     </div>
   </div>
 
                                             <!--ARTISAN.ES-->
   <div class="title-container-home-baniere">
-    <h1 class="title-small archivo-black-regular"> ARTISAN.ES </h1>
-    <h1 class="title-large archivo-black-regular"> ARTISAN.ES </h1>
+    <h1 class="title-small archivo-black-regular"> ARTISANS </h1>
+    <h1 class="title-large archivo-black-regular"> ARTISANS </h1>
   </div>
 
-    <div class="cards-container">
+    <div class="cards-container" id="artisanies">
                                                       <!-- ARTISAIN.ES-->
                                 <!--flex top cards-->
     <div class="home-flex-top">
@@ -234,8 +254,8 @@
       </div>
     </div>
                     <!-- bouton activities -->
-    <div class="index-activities">
-    <%= link_to "En savoir plus", activities_path, class: "btn-activities" %>
+    <div class="index-activities archivo-black-regular">
+    <%= link_to "Toutes nos propositions", activities_path, class: "btn-activities" %>
     </div>
   </div>
 
@@ -246,45 +266,50 @@
     <h1 class="title-large archivo-black-regular"> COMMUNAUTÉ </h1>
   </div>
 
-    <div class="mosaique">
-    <%#= link_to :controller => "activities", :filters => {:categories => "Communaute" } do %>
+    <div class="mosaique" id="communaute">
     <div class="mosaiquex1" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194415/photo-1569617084133-26942bb441f2_ox2wb9.jpg" %>')">
-      <p class=" dancing-script-card">Partage</p>
+      <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
+        <p class=" dancing-script-card">Partage</p>
+      <% end %>
     </div>
-    <%# end %>
+
     <div class="mosaiquex4">
       <div class="mosaiquex2">
-      <%#= link_to :controller => "activities", :filters => {:categories => "Communaute" } do %>
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194087/photo-1544735716-ea9ef790f501_ndmwrc.jpg" %>')">
-          <p class=" dancing-script-card">Respect</p>
+          <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
+            <p class=" dancing-script-card">Respect</p>
+          <% end %>
         </div>
-        <%# end %>
-        <%#= link_to :controller => "activities", :filters => {:categories => "Communaute" } do %>
+
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194489/photo-1469571486292-0ba58a3f068b_nmmm4u.jpg" %>')">
-          <p class=" dancing-script-card">Proximité</p>
+          <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
+            <p class=" dancing-script-card">Proximité</p>
+          <% end %>
         </div>
-        <%# end %>
+
       </div>
       <div class="mosaiquex2">
-      <%#= link_to :controller => "activities", :filters => {:categories => "Communaute" } do %>
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946080/photo-1477239439998-839196943351_ilj8if.jpg" %>')">
-          <p class=" dancing-script-card">Échange</p>
+          <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
+            <p class=" dancing-script-card">Échange</p>
+          <% end %>
         </div>
-        <%# end %>
-        <%#= link_to :controller => "activities", :filters => {:categories => "Communaute" } do %>
+
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194389/photo-1548705085-101177834f47_crdw9y.jpg" %>')">
-          <p class=" dancing-script-card">Dynamisme</p>
+          <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
+            <p class=" dancing-script-card">Dynamisme</p>
+          <% end %>
         </div>
-        <%# end %>
+
       </div>
     </div>
   </div>
@@ -336,16 +361,17 @@
     <h1 class="title-large archivo-black-regular"> AGENDA </h1>
   </div>
 
-  <div class="card-agenda">
-    <div class="card-agendax2" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720192305/photo-1603492501465-2d1bf970b974_inrtxl.jpg" %>')">
-      <p> un paragraphe </p>
+  <div class="card-agenda" id="agenda">
+    <div class="card-agendax2" style="background-position: bottom; background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194389/photo-1548705085-101177834f47_crdw9y.jpg" %>')">
+      <p class="dancing-script-card text-agenda flip-card-back flip-card-text">Explorez<br> Connectez <br> Vivez pleinement</p>
 
     </div>
-    <div class="card-agendax2" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    <div class="card-agendax2 flip-card-front" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720191613/photo-1506784242126-2a0b0b89c56a_vhk6r4.jpg" %>')">
-      <p>un paragraphe</p>
-
+    <%= link_to favorites_path, class: 'text-agenda' do %>
+      <p class="dancing-script-card flip-card-back flip-card-front flip-card-text ">Réservez vos activités</p>
+    <% end %>
     </div>
   </div>
 
