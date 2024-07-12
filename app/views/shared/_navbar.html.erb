@@ -11,16 +11,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <%# <li class="nav-item">
           <button id="geolocate-button" class="btn btn-primary">
             <i class="fa-regular fa-location-arrow" id="geolocate-icon-off"></i>
             <i class="fa-solid fa-location-arrow" id="geolocate-icon-on" style="display:none;"></i>
             Ma Position
-          </button>
+          </button> %>
+          <%# </li> %>
+            <li class="nav-item">
+            <%= link_to "Voir Treker", user_path(current_user.id) + "/near_me", class: "nav-link" %>
+            </li>
           </li>
           <li class="nav-item">
             <% first_chatroom = Chatroom.first %>
-            <%= link_to "MESSAGERIE", chatroom_path(first_chatroom.id), class: "nav-link" %>
+            <%= link_to "Messagerie", chatroom_path(first_chatroom.id), class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
