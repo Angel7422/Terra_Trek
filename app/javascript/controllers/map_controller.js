@@ -55,7 +55,7 @@ export default class extends Controller {
       // Créez un élément HTML pour le marker
       const el = document.createElement('div')
       el.className = 'custom-marker'
-      el.style.backgroundImage = 'url(https://png.pngtree.com/png-clipart/20221022/original/pngtree-orange-pin-map-png-image_8711935.png)'
+      el.style.backgroundImage = 'url("https://png.pngtree.com/png-clipart/20221022/original/pngtree-orange-pin-map-png-image_8711935.png")'
       el.style.width = '70px'
       el.style.height = '70px'
       el.style.backgroundSize = '100%'
@@ -63,9 +63,6 @@ export default class extends Controller {
       let popupContent = `<div class="pin-location">`
       if (marker.name) {
         popupContent += `<h1>${marker.name}</h1>`
-      }
-      if (marker.nickname) {
-        popupContent += `<h1>${marker.nickname}</h1>`
       }
       if (marker.imageUrl) {
         popupContent += `<img src="${marker.imageUrl}" style="width: 100%">`
