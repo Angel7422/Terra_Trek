@@ -1,0 +1,32 @@
+<div class="container container-user-map">
+  <h1>Bonjour <strong><%= @user.nickname %></strong> voici les autres Trekers</h1>
+  <div id="user-map"
+        data-controller="map"
+        data-map-api-key-value="<%= ENV['MAPBOX_TOKEN'] %>"
+        data-map-markers-value="<%= User.all.map { |user| { lat: user.latitude, lng: user.longitude, nickname: user.nickname, id: user.id } }.to_json %>"
+        style="width: 100%; height: 400px;">
+  </div>
+  <form action="/users/near_me" method="get">
+    <div class="form-group">
+      <label for="distance">Choisir la distance en kilomètres:</label>
+      <input type="number" id="distance" name="distance" class="form-control" min="1" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Afficher</button>
+  </form>
+</div>
+
+<div class="container container-users">
+  <h2>Les Treker près de chez toi</h2>
+  <div class="row">
+    <% User.all.each do |user| %>
+      <div class="col-md-3">
+        <div class="card card-user-map" style="width: 18rem;">
+          <div class="card-body card-body-user-map">
+            <h5 class="card-title card-title-user-map"><%= user.nickname %></h5>
+            <button class="btn-view-map" data-id="<%= user.id %>">Voir sur la carte</button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

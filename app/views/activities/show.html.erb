@@ -1,21 +1,35 @@
 
 <%#= cl_image_tag @activity.pictures.url %>
-<h1><%= @activity.name %></h1>
+<h1 class="title-activity-show"><%= @activity.name %></h1>
+<div class="activity-card-show">
+  <div id="carousel-<%= @activity.id %>" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <% @activity.pictures.each_with_index do |picture, index| %>
+        <div class="carousel-item <%= 'active' if index == 0 %>">
+          <%= cl_image_tag picture.key, height: 300, width: 400, crop: :fill %>
+        </div>
+      <% end %>
+    </div>
+    <a class="carousel-control-prev" href="#carousel-<%= @activity.id %>" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-<%= @activity.id %>" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="description-activity-show">
 <p><%= @activity.description %></p>
-
-<% @activity.pictures.each do |picture| %>
-  <%= cl_image_tag picture.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
+</div>
 
 <div data-controller="toggle" class="mt-5">
-  <button class="btn btn-primary mb-3" data-action="click->toggle#fire">Book now</button>
+  <button class="btn btn-primary mb-3" data-action="click->toggle#fire">Réserver</button>
   <div data-toggle-target="togglableElement" class="d-none">
       <%= render "form", booking: @booking %>
   </div>
-
-  <h1><%= @activity.name %></h1>
-<p><%= @activity.description %></p>
 
 <%# <% if @user.favorited?(@activity) %>
   <%# <p>This activity is in your favorites.</p> %>
@@ -23,5 +37,5 @@
   <%# <%= link_to 'Add to Favorites', favorite_path(activity_id: @activity.id), method: :post %>
 <%# <% end %>
 
-  <%= button_to "Favorie", activity_favorites_path(@activity), method: :post %>
+  <%= button_to "Favoris", activity_favorites_path(@activity), method: :post %>
 </div>

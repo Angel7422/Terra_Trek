@@ -9,14 +9,28 @@
   margin-bottom: 16px;
   box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.5);
 
+  p {
+    color: white;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.9rem;
+    margin: 0;
+    padding-right: 1050px;
+  }
   #geolocate-button {
     color:rgb(37, 37, 37);
-    background-image: linear-gradient(to bottom right, #e1771a, #d78c4a);
+    background-image: linear-gradient(to bottom right, #e1771a, #e1771a);
     border: 2px solid #e1771a;
   }
 }
-
-
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+.navbar-terra .navbar-nav .nav-link {
+  color: white;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
 .navbar-terra .navbar-collapse {
   flex-grow: 0;
 
@@ -24,4 +38,13 @@
 
 .navbar-terra .navbar-brand img {
   width: 45px;
+}
+
+.custom-nav-item .nav-link {
+  color: #ffffff !important; /* Change la couleur du texte */
+  border-radius: 5px; /* Ajoute des bords arrondis */
+}
+
+.custom-nav-item .nav-link:hover {
+  color: #d1e3f6 !important; /* Change la couleur du texte au survol */
 }

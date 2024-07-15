@@ -17,6 +17,11 @@ class User < ApplicationRecord
   #   @current_user.favorites.favorite_activities.include?(activity)
   # end
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  # has_one_attached :photo
+
   private
 
   def create_profile
