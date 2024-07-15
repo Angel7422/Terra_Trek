@@ -1,22 +1,25 @@
-<h1>hello from index booking</h1>
+<div class="container-index-activity">
+  <div class="header-section">
+    <h1>Mon Roadbook</h1>
+    <p>Vue d'ensemble de toutes vos activités réservées</p>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Something</th>
-      <th>We need to add</th>
-      <th>Here</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.activity.name %></td>
-        <td><%= booking.date %></td>
-        <td>
-          <%= link_to 'Show', booking_path(booking), class: "btn-show" %>
-        </td>
-      </tr>
+  <div class="calendar-frame center">
+    <% start_day = @start_date.beginning_of_month.wday %>
+    <% end_day = @start_date.end_of_month.day %>
+
+    <% (1..end_day).each do |day| %>
+      <% date = Date.new(@start_date.year, @start_date.month, day) %>
+      <% bookings_on_day = @bookings.select { |b| b.start_date <= date && b.end_date >= date } %>
+      <% activity_picture = bookings_on_day.first&.activity&.pictures&.first&.key %>
+      <div class="day-frame center real" style="background-image: url(<%= activity_picture ? cl_image_path(activity_picture) : '' %>); background-color: <%= activity_picture ? 'transparent' : '#f0f0f0' %>;">
+        <h2 class="day-number"><%= day %></h2>
+        <div class="day-label center">
+          <% bookings_on_day.each do |booking| %>
+            <%= booking.activity.name %><br>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>

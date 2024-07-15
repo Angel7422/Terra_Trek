@@ -19,6 +19,9 @@
             </button>
           </li>
           <li class="nav-item custom-nav-item">
+            <%= link_to "Mon Roadbook", bookings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item custom-nav-item">
             <%= link_to "Voir Treker", user_path(current_user.id) + "/near_me", class: "nav-link" %>
           </li>
           <li class="nav-item custom-nav-item">

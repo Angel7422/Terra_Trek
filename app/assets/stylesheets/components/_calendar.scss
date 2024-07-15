@@ -1,47 +1,70 @@
-.booking-details {
-  max-width: 100%;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.25);
-  // box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.05s ease-in;
+  --dim1: 8vw;
+  --dim2: 0.2vw;
+}
+
+.calendar-frame {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: var(--dim2);
+  width: 90vw;
+  margin: auto;
 }
 
-.booking-details > * {
-  flex: 1;
-  margin-right: 1rem;
+.day-frame {
+  margin: var(--dim2);
+  height: var(--dim1);
+  width: var(--dim1);
+  background-color: #f0f0f0;
+  position: relative;
 }
 
-.booking-info {
-  max-width: 60%;
+.day-number {
+  font-family: Roboto, sans-serif;
+  font-size: 2vw;
+  text-shadow: 0 0 1vw rgba(0, 0, 0, 0.25);
 }
 
-.calendar-container {
-  max-width: 40%;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.day-label {
+  width: var(--dim1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 0.5vw;
+  font-family: Heebo, sans-serif;
+  text-align: center;
 }
 
-.calendar-container .date {
-  font-size: 12px;
-  color: #6b6b5b;
+.real:hover > .day-label {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.calendar-container .event {
-  font-size: 10px;
-  color: #8a795d;
-  margin-top: 2px;
-  padding: 2px;
-  background-color: #dcd3b2;
-  border-radius: 3px;
-  border: 1px solid #c8b98d;
+.real {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.real:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.real:hover > .day-number {
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10vw rgba(0, 0, 0, 0);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
