@@ -3,10 +3,20 @@
 }
 
 .img-container-activity {
+  margin: 5px;
+  height: 400px;
+  width: 680px;
   background-size: cover;
   background-position: center;
+  display: flex; /* Ajout de Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center;
+
 }
 
+
 .text-overlay-show-activity {
+  text-align: center;
   color: white;
+  z-index: 1;
 }

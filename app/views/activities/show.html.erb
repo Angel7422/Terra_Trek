@@ -2,18 +2,16 @@
 <%#= cl_image_tag @activity.pictures.url %>
 <div class="activity-card-show">
   <%# if @activity.pictures.any? %>
-    <div class="img-container-activity" style="background-image: url(<%= cl_image_path(@activity.pictures.first.key, height: 300, width: 400, crop: :fill) %>)">
+    <div class="img-container-activity" style="background-image: url(<%= cl_image_path(@activity.pictures.first.key, crop: :fill) %>)">
       <div class="text-overlay-show-activity">
         <h1 class="title-activity-show"><%= @activity.name %></h1>
         <p><%= @activity.description %></p>
       </div>
     </div>
   <%# end %>
-</div>
 
-<div class="activity-card-show">
   <%# if @activity.pictures.any? %>
-    <div class="img-container-activity" style="background-image: url(<%= cl_image_path(@activity.pictures.second.key, height: 300, width: 400, crop: :fill) %>)">
+    <div class="img-container-activity" style="background-image: url(<%= cl_image_path(@activity.pictures.second.key, crop: :fill) %>)">
       <div class="text-overlay-show-activity">
         <h1 class="title-activity-show"><%= @activity.name %></h1>
         <p><%= @activity.description %></p>
