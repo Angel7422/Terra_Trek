@@ -24,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.activity = @activity
     @booking.user = current_user
     if @booking.save!
-      redirect_to booking_path(@booking), notice: 'Réservation effectuée avec succès.'
+      redirect_to activities_path, notice: 'Activité ajoutée au carnet de route avec succès.'
     else
       render 'activities/show'
     end
