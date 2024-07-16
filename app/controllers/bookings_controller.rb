@@ -4,11 +4,12 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @bookings = @user.bookings.includes(:activity)
+    @start_date = params.fetch(:start_date, Date.today).to_date
   end
 
   def show
     @booking = Booking.find(params[:id])
-    @activity = @booking.activity
     @activity = @booking.activity
     @start_date = params.fetch(:start_date, @booking.start_date).to_date
   end
