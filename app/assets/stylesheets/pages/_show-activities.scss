@@ -1,35 +1,12 @@
+.activity-card-show {
+  display: flex;
+}
+
 .img-container-activity {
-  position: relative;
+  background-size: cover;
+  background-position: center;
 }
 
-.title-activity-show {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.text-overlay-show-activity {
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  font-size: 3rem;
 }
-
-
-
-
-
-
-
-
-// .activity-card-show {
-//   margin: 15px;
-// }
-
-// .title-activity-show {
-//   margin: 30px;
-//   font-size: 3.5rem;
-// }
-
-// .description-activity-show p{
-//   margin: 30px;
-//   font-size: 16px;
-// }
