@@ -1,3 +1,16 @@
+@media (min-width: 768px) {
+  .header-section {
+    text-align: left;
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 40px;
+      margin-bottom: 35px;
+      padding-left: 310px;
+      padding-right: 350px;
+    }
+  }
+}
 .header-section {
   text-align: left;
   margin-bottom: 20px;
@@ -7,7 +20,26 @@
     margin: 40px;
     margin-bottom: 35px;
     padding-left: 310px;
+    padding-right: 350px;
   }
+}
+
+.fixed-image-container {
+  position: fixed;
+  top: 67vh; /* Ajustez cette valeur pour positionner l'image sous la carte */
+  right: 0;
+  width: 27%;
+  z-index: -1; /* Assurez-vous que l'image est derrière la carte */
+}
+
+.fixed-image {
+  width: 80%;
+  height: auto;
+}
+.img-logo-index {
+  width: 40%;
+  height: auto;
+  margin-top: 20px;
 }
 
 .container-index-activity {
