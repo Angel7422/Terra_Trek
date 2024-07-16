@@ -6,9 +6,11 @@
       <i class="fa fa-filter"></i>
     </div>
     <div class="header-section">
-      <h1>Explorez une variété d'activités</h1>
+      <div style="display: flex; justify-content: space-between;">
+      <h1 style="float: left">Explorez une variété d'activités</h1>
+      <h1 style="float: right">Bienvenue <%= params[:city] %></h1>
+      </div>
     </div>
-
     <!-- Filter form -->
     <div class="filter-container hidden" data-filterform-target="filterForm">
       <div class="filter-form-categories">
@@ -35,6 +37,9 @@
       data-map-markers-value="<%= @markers.to_json %>"
       style="position: fixed; border: 1px solid black;">
     </div>
+      <div class="fixed-image-container">
+    <%= image_tag 'LogoTerra', class:'img-logo-index' %>
+  </div>
 
 <div class="cards-activities-container">
       <% if @activities.empty? %>
