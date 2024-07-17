@@ -1,4 +1,17 @@
-.header-section {
+@media (min-width: 768px) {
+  .header-section {
+    text-align: left;
+
+    h1 {
+      font-size: 3.5rem;
+      margin: 40px;
+      margin-bottom: 35px;
+      padding-left: 310px;
+      padding-right: 350px;
+    }
+  }
+}
+.header-section-activity {
   text-align: left;
   margin-bottom: 20px;
 
@@ -6,8 +19,171 @@
     font-size: 3.5rem;
     margin: 40px;
     margin-bottom: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
+
+.fixed-image-container {
+  position: fixed;
+  top: 67vh; /* Ajustez cette valeur pour positionner l'image sous la carte */
+  right: 0;
+  width: 27%;
+  z-index: -1; /* Assurez-vous que l'image est derrière la carte */
+}
+
+.fixed-image {
+  width: 80%;
+  height: auto;
+}
+.img-logo-index {
+  width: 40%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.container-index-activity {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-section {
+  display: flex;
+  padding-right: 40%;
+}
+
+.cards-activities-container {
+  display: grid;
+  flex: 1 0 60%;
+  height: 90vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-right: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  .card-activity-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-activity {
+    background: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+
+    .name-activity {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 10px;
+      font-size: 2rem;
+      color: white;
+      z-index: 1;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(200, 101, 44, 0.7);
+      color: white;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: .5s ease;
+      opacity: 0.9;
+    }
+
+    .description-activity {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      font-size: 1.6rem;
+      padding: 10px;
+    }
+
+    .btn-view-map {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ff6347; /* Couleur personnalisée du bouton */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 2;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      pointer-events: auto;
+
+      &:hover {
+        background-color: #ff4500; /* Couleur au survol du bouton */
+      }
+    }
+
+    &:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+
+      .overlay {
+        height: 100%;
+      }
+    }
+
+    .card-activity-image {
+      height: 200px;
+      border-radius: 8px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+
+    // .card-activity:hover .name-activity,
+    // .card-activity:hover .description-activity {
+    //   opacity: 1; /* Add this line to show the text on hover */
+    // }
+    // .card-activity-content {
+    //   display: flex;
+    //   flex-direction: column;
+    //   gap: 10px;
+    // }
+
+    // .card-activity-title {
+    //   font-size: 1.5rem;
+    //   color: #666;
+    // }
+
+    // .card-activity-description {
+    //   font-size: 1rem;
+    //   color: #666;
+    // }
+
+  }
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
 
 // .category-menu {
 //   ul {
@@ -33,135 +209,98 @@
 //   }
 // }
 
-.content-section {
-  display: flex;
-  padding-right: 40%;
-}
 
 
-.cards-activities-container {
-  display: grid;
-  flex: 1 0 60%;
-  height: 90vh;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding-right: 20px;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 
-  /* Hide scrollbar for Chrome, Safari, and Opera */
-  &::-webkit-scrollbar {
-    display: none;
-  }
 
-  /* Hide scrollbar for IE, Edge, and Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+// .activity-card {
 
-.activity-card {
+//   background: #fff;
+//   border: 1px solid #ddd;
+//   border-radius: 8px;
+//   width: 90%;
+//   height: 300px;
+//   transition: transform 0.3s;
 
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 90%;
-  height: 300px;
-  transition: transform 0.3s;
-  &:hover {
-    transform: scale(1.05);
-  }
+//   &:hover {
+//     transform: scale(1.05);
+//   }
 
-  .carousel {
-    height: 100%;
-    .carousel-inner {
-      height: 100%;
-      .carousel-item {
-        height: 100%;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          // border-bottom: 1px solid #ddd;
-        }
-      }
-    }
+  // .carousel {
+  //   height: 100%;
+  //   .carousel-inner {
+  //     height: 100%;
+  //     .carousel-item {
+  //       height: 100%;
+  //       img {
+  //         width: 100%;
+  //         height: 100%;
+  //         object-fit: cover;
+  //         // border-bottom: 1px solid #ddd;
+  //       }
+  //     }
+  //   }
 
-    .carousel-control-prev, .carousel-control-next {
-      filter: invert(100%);
-    }
-  }
+  //   .carousel-control-prev, .carousel-control-next {
+  //     filter: invert(100%);
+  //   }
+// }
 
-  .card-text  {
+//   .card-text  {
 
-    bottom: 0; /* Positionner le texte en bas de la carte */
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
-    color: #fff; /* Couleur du texte */
-    text-align: center; /* Centrer le texte */
-    padding: 10px; /* Padding autour du texte */
-    box-sizing: border-box; /* Inclure le padding dans la largeur totale */
-    transition: transform 0.3s, background 0.3s;
-    transform: translateY(100%); /* Positionner le texte en dehors de la vue initialement */
+//   bottom: 0; /* Positionner le texte en bas de la carte */
+//   left: 0;
+//   width: 100%;
+//   background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+//   color: #fff; /* Couleur du texte */
+//   text-align: center; /* Centrer le texte */
+//   padding: 10px; /* Padding autour du texte */
+//   box-sizing: border-box; /* Inclure le padding dans la largeur totale */
+//   transition: transform 0.3s, background 0.3s;
+//   transform: translateY(100%); /* Positionner le texte en dehors de la vue initialement */
 
-    .activity-card:hover .card-text {
+//   .activity-card:hover .card-text {
 
-      transform: translateY(0); /* Remonter le texte au survol */
-      background: rgba(0, 0, 0, 0.7); /* Assombrir le fond lors du survol */
-    }
-  }
+//   transform: translateY(0); /* Remonter le texte au survol */
+//   background: rgba(0, 0, 0, 0.7); /* Assombrir le fond lors du survol */
+//   }
+// }
 
-  .name-activity {
-    font-size: 1.5rem;
-    margin: 10px;
-    color: #666;
-  }
 
-  .description-activity {
-    font-size: 1rem;
-    color: #666;
-    margin: 10px;
-  }
-}
 
-.new-icon-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  gap: 8px;
-}
 
-.new-icon-square {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+// .new-icon-container {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 20px;
+//   gap: 8px;
+// }
 
-  a {
-    color: #007BFF;
-    font-size: 1.5rem;
-    text-decoration: none;
+// .new-icon-square {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 60px;
+//   height: 60px;
+//   background-color: #f8f9fa;
+//   border-radius: 8px;
+//   transition: background-color 0.3s;
 
-    &:hover {
-      color: #0056b3;
-    }
-  }
+//   a {
+//     color: #007BFF;
+//     font-size: 1.5rem;
+//     text-decoration: none;
 
-  &:hover {
-    background-color: #e2e6ea;
-  }
-}
+//     &:hover {
+//       color: #0056b3;
+//     }
+//   }
 
-.new-icon {
-  font-size: 2rem;
-}
+//   &:hover {
+//     background-color: #e2e6ea;
+//   }
+// }
 
-.container-index-activity {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+// .new-icon {
+//   font-size: 2rem;
+// }

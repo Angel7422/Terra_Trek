@@ -68,7 +68,7 @@ export default class extends Controller {
         popupContent += `<img src="${marker.imageUrl}" style="width: 100%">`
       }
       if (marker.id) {
-        popupContent += `<button onclick="window.location.href = '/activities/${marker.id}'">Réserver</button>`
+        popupContent += `<button onclick="window.location.href = '/activities/${marker.id}'">Ajouter au Carnet</button>`
       }
       popupContent += `</div>`
 
@@ -94,6 +94,9 @@ export default class extends Controller {
   #addViewMapEventListeners() {
     document.querySelectorAll('.btn-view-map').forEach(button => {
       button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+
         const userId = parseInt(event.currentTarget.getAttribute('data-id'), 10)
         const userMarkerObj = this.markers.find(m => m.id === userId)
 
@@ -101,7 +104,7 @@ export default class extends Controller {
           const userMarker = userMarkerObj.marker
           this.map.flyTo({
             center: userMarker.getLngLat(),
-            zoom: 14
+            zoom: 10,
           })
           userMarker.togglePopup()
         }

@@ -4,11 +4,12 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @bookings = @user.bookings.includes(:activity)
+    @start_date = params.fetch(:start_date, Date.today).to_date
   end
 
   def show
     @booking = Booking.find(params[:id])
-    @activity = @booking.activity
     @activity = @booking.activity
     @start_date = params.fetch(:start_date, @booking.start_date).to_date
   end
@@ -23,7 +24,7 @@ class BookingsController < ApplicationController
     @booking.activity = @activity
     @booking.user = current_user
     if @booking.save!
-      redirect_to booking_path(@booking), notice: 'Réservation effectuée avec succès.'
+      redirect_to activities_path, notice: 'Activité ajoutée au carnet de route avec succès.'
     else
       render 'activities/show'
     end

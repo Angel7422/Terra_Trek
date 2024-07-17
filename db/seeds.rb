@@ -52,9 +52,9 @@ end
 
 
 activity_4 = Activity.new(
-  category: "Communaute",
-  name: "LOCATION D'UN KAYAK SIMPLE - CANNES - Mourre Rouge",
-  address: "PORT DU MOURE ROUGE06400 CANNES",
+  category: "Activites Nautiques",
+  name: "Location Kayak - Mourre Rouge",
+  address: "Port du Moure Rouge, 06400 CANNES",
   latitude: 43.55135,
   longitude: 7.01275,
   description: "Le kayak simple est un support qui convient à tous et la Méditerranée est le lieu idéal pour sa pratique. Vous pourrez, au choix, longer la côte Est de Cannes et découvrir des contrées inconnues des touristes ou vous orienter vers l’île Sainte Marguerite et profiter de la vue sur la baie de Cannes loin du tumulte azuréen.
@@ -123,7 +123,7 @@ end
 
 activity_9 = Activity.new(
   category: "Producteurs",
-  name: "FERME DES RAPILLES",
+  name: "Ferme des Rapilles",
   address: "97 chemin du Rivet, 38360, engins",
   description: "Productions de la ferme : Fromages : bleu du Vercors-Sassenage, Rapille, raclette, faisselles, beurre, St Sornin, tommette du Vercors,le petit enginois, la raclette
   Productions labellisées Agriculture biologique : 100 % de notre production sous label agriculture biologique",
@@ -231,7 +231,7 @@ pictures15.each do |picture|
 
 activity_16 = Activity.new(
   category: "Culture",
-  name: "Quiveutpister",
+  name: "Qui veut pister ?",
   address: "Place Bellecour, 69005 Lyon",
   latitude: 45.7542,
   longitude: 4.8309,
