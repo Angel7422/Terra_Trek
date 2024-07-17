@@ -61,7 +61,7 @@
                 <h3 class="name-activity"><%= activity.name %></h3>
                 <div class="overlay">
                   <p class="description-activity"><%= truncate(activity.description, length: 120) %></p>
-                  <button class="btn-view-map" data-id="<%= activity.id %>">Voir sur la carte</button>
+                  <button class="btn-view-map" data-id="<%= activity.id %>"><i class="fa fa-map-location-dot"></i></button>
                 </div>
               </div>
             </div>
@@ -69,6 +69,8 @@
         <% end %>
       <% end %>
     </div>
+    <br>
+    <br>
   </div>
 
 </div>
