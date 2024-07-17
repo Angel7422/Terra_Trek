@@ -1,35 +1,31 @@
+.activity-card-show {
+  display: flex;
+}
+
 .img-container-activity {
-  position: relative;
+  margin: 5px;
+  height: 400px;
+  width: 680px;
+  background-size: cover;
+  background-position: center;
+  // display: flex; /* Ajout de Flexbox */
+  // justify-content: center; /* Centre horizontalement */
+  // align-items: center;
+
 }
 
-.title-activity-show {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  font-size: 3rem;
+.text-overlay-show-activity {
+  width: 50%;
+  text-align: left;
+  color: black;
+  // z-index: 1;
 }
 
+.description-activity-show {
+  display: flex;
+  margin: 10px;
+}
 
-
-
-
-
-
-
-// .activity-card-show {
-//   margin: 15px;
-// }
-
-// .title-activity-show {
-//   margin: 30px;
-//   font-size: 3.5rem;
-// }
-
-// .description-activity-show p{
-//   margin: 30px;
-//   font-size: 16px;
-// }
+.form-activity-show {
+  margin: 5px;
+}
