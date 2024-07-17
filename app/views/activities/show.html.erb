@@ -1,48 +1,32 @@
 
 <%#= cl_image_tag @activity.pictures.url %>
 <div class="activity-card-show">
-  <%# if @activity.pictures.any? %>
-    <div class="img-container-activity" style="background-image: url(<%= cl_image_path(@activity.pictures.first.key, crop: :fill) %>)">
-      <div class="text-overlay-show-activity">
-        <h1 class="title-activity-show"><%= @activity.name %></h1>
-        <p><%= @activity.description %></p>
-      </div>
+    <div class="img-container-activity" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= cl_image_path(@activity.pictures.first.key, crop: :fill) %>)">
     </div>
-  <%# end %>
 
-  <%# if @activity.pictures.any? %>
-    <div class="img-container-activity" style="background-image: url(<%= cl_image_path(@activity.pictures.second.key, crop: :fill) %>)">
-      <div class="text-overlay-show-activity">
-        <h1 class="title-activity-show"><%= @activity.name %></h1>
-        <p><%= @activity.description %></p>
-      </div>
+    <div class="img-container-activity" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(<%= cl_image_path(@activity.pictures.second.key, crop: :fill) %>)">
     </div>
-  <%# end %>
-</div>
-
-
-
-
 </div>
 
 <div class="description-activity-show">
-
-</div>
-
-
-
-
-<div data-controller="toggle" class="mt-5">
-  <button class="btn btn-primary mb-3" data-action="click->toggle#fire">Réserver</button>
-  <div data-toggle-target="togglableElement" class="d-none">
-      <%= render "form", booking: @booking %>
+  <div class="text-overlay-show-activity">
+    <h1 class="title-activity-show"><%= @activity.name %></h1>
+    <p><%= @activity.description %></p>
   </div>
 
-<%# <% if @user.favorited?(@activity) %>
-  <%# <p>This activity is in your favorites.</p> %>
-<%# <% else %>
-  <%# <%= link_to 'Add to Favorites', favorite_path(activity_id: @activity.id), method: :post %>
-<%# <% end %>
 
-  <%= button_to "Favoris", activity_favorites_path(@activity), method: :post %>
+  <div data-controller="toggle" class='form-activity-show'>
+    <button class="btn btn-primary mb-3" data-action="click->toggle#fire">Réserver</button>
+    <div data-toggle-target="togglableElement" class='d-none'>
+        <%= render "form", booking: @booking %>
+    </div>
+
+    <%# <% if @user.favorited?(@activity) %>
+      <%# <p>This activity is in your favorites.</p> %>
+    <%# <% else %>
+      <%# <%= link_to 'Add to Favorites', favorite_path(activity_id: @activity.id), method: :post %>
+    <%# <% end %>
+
+    <%= button_to "Favoris", activity_favorites_path(@activity), method: :post %>
+  </div>
 </div>

@@ -8,15 +8,24 @@
   width: 680px;
   background-size: cover;
   background-position: center;
-  display: flex; /* Ajout de Flexbox */
-  justify-content: center; /* Centre horizontalement */
-  align-items: center;
+  // display: flex; /* Ajout de Flexbox */
+  // justify-content: center; /* Centre horizontalement */
+  // align-items: center;
 
 }
 
-
 .text-overlay-show-activity {
-  text-align: center;
-  color: white;
-  z-index: 1;
+  width: 50%;
+  text-align: left;
+  color: black;
+  // z-index: 1;
+}
+
+.description-activity-show {
+  display: flex;
+  margin: 10px;
+}
+
+.form-activity-show {
+  margin: 5px;
 }
