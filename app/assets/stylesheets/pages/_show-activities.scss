@@ -18,7 +18,6 @@
 
 .right {
   flex: 0 0 auto; /* Conserve sa taille naturelle */
-  background-color: #d0d0d0; /* Pour illustration */
   width: 300px; /* Largeur fixe, ajuste selon tes besoins */
 }
 
@@ -54,6 +53,12 @@
   background-color: #fff;
 }
 
+.btn-activity-show-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
 .btn-activity-show {
 
   padding: 12px 20px; /* Ajoute de l'espace intérieur autour du texte du bouton */
@@ -66,6 +71,8 @@
   cursor: pointer; /* Change le curseur au survol pour indiquer que c'est cliquable */
   text-align: center; /* Centre le texte à l'intérieur du bouton */
   margin: 10px 0;
+  // border: none;
+  // background-color: transparent;
 }
 
 .btn-activity-show:hover {
