@@ -14,6 +14,14 @@
 
 }
 
+
+
+.right {
+  flex: 0 0 auto; /* Conserve sa taille naturelle */
+  background-color: #d0d0d0; /* Pour illustration */
+  width: 300px; /* Largeur fixe, ajuste selon tes besoins */
+}
+
 .text-overlay-show-activity {
   width: 50%;
   text-align: left;
@@ -21,11 +29,55 @@
   // z-index: 1;
 }
 
-.description-activity-show {
-  display: flex;
-  margin: 10px;
+.title-activity-show {
+  margin: 5px;
+ font-size: 3.5em;
 }
 
-.form-activity-show {
-  margin: 5px;
+.text-overlay-show-activity p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.description-activity-show {
+  display: flex;
+  margin: 15px;
+}
+
+.form-container-activity-show {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.btn-activity-show {
+
+  padding: 12px 20px; /* Ajoute de l'espace intérieur autour du texte du bouton */
+  width: 200px; /* Définit la largeur du bouton */
+  height: 50px; /* Définit la hauteur du bouton */
+  font-size: 16px;
+  border-radius: 8px; /* Arrondit les coins du bouton */
+  background-color: #E1771A; /* Définit la couleur de fond du bouton */
+  color: #fff; /* Définit la couleur du texte */
+  cursor: pointer; /* Change le curseur au survol pour indiquer que c'est cliquable */
+  text-align: center; /* Centre le texte à l'intérieur du bouton */
+  margin: 10px 0;
+}
+
+.btn-activity-show:hover {
+  background-color: #c26615; /* Change la couleur de fond lorsque le bouton est survolé */
+}
+
+.form-activity-show input,
+.form-activity-show textarea,
+.form-activity-show button {
+
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
