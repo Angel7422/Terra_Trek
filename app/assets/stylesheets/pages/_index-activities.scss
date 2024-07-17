@@ -109,6 +109,7 @@
       width: 100%;
       font-size: 1.6rem;
       padding: 10px;
+      font-family:'Times New Roman', Times, serif;
     }
 
     .btn-view-map {
@@ -150,8 +151,6 @@
         object-fit: cover;
       }
     }
-
-
     // .card-activity:hover .name-activity,
     // .card-activity:hover .description-activity {
     //   opacity: 1; /* Add this line to show the text on hover */
@@ -182,8 +181,89 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+.icon-container-activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 355px; /* Ajuste la position pour être en dessous de la barre de recherche */
+  right: 10px;
+  transform: translateY(-50%); /* Centre verticalement */
+  z-index: 3;
+}
+.icon-square-activity {
+  width: 50px; /* Taille des carrés */
+  height: 50px;
+  background-color: rgba(225, 119, 26, 0.5); /* Utilise la même couleur semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px; /* Coins arrondis */
+  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.396); /* Ombre similaire à celle de la barre de recherche */
+  margin: 40px; /* Espace entre les carrés */
+}
 
 
+.filter-container-activity {
+  display: flex;
+  flex-direction: row; /* Affiche les éléments en ligne horizontale */
+  align-items: center; /* Aligne les éléments au centre verticalement */
+  position: fixed; /* Fixe le conteneur en haut à droite */
+  top: 10px; /* Distance du haut de la fenêtre */
+  right: 10px; /* Positionne le conteneur à droite */
+  background-color: #fff; /* Fond blanc pour le conteneur */
+  border: 1px solid #ddd; /* Bordure légère autour du conteneur */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour le conteneur */
+  z-index: 1000; /* Assure que le conteneur est au-dessus des autres éléments */
+  padding: 10px; /* Espacement intérieur du conteneur */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transition douce pour l'affichage/masquage */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Style du formulaire de filtres */
+.filter-form-categories {
+  padding: 20px; /* Espacement intérieur du conteneur */
+}
+
+/* Style pour le groupe de champs du formulaire */
+.form-group-categories {
+  margin-bottom: 20px; /* Espacement entre les éléments du formulaire */
+}
+
+/* Style pour les éléments de la checklist */
+.filter-form-categories .checkbox {
+  margin-bottom: 3px; /* Espacement entre les éléments de la checklist */
+  display: flex;
+  align-items: center;
+}
+
+/* Style pour le label de la checklist */
+.filter-form-categories .checkbox label {
+  margin-left: 10px; /* Espacement entre la case à cocher et le label */
+  font-size: 1em;
+  color: #333;
+}
+
+/* Style pour le bouton de soumission du formulaire */
+.custom-btn {
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: none; /* Supprime la bordure du bouton */
+  padding: 10px 15px; /* Espacement intérieur du bouton */
+  font-size: 1em; /* Taille de la police du bouton */
+  cursor: pointer; /* Curseur de la souris en forme de main */
+  border-radius: 4px; /* Coins arrondis du bouton */
+  text-align: center; /* Centre le texte à l'intérieur du bouton */
+  display: inline-block; /* Assure que le bouton se comporte comme un bloc en ligne */
+}
+
+.custom-btn:hover {
+  background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
 
 // .category-menu {
 //   ul {
