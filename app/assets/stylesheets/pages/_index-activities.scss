@@ -194,7 +194,7 @@
 .icon-square-activity {
   width: 50px; /* Taille des carrés */
   height: 50px;
-  background-color: rgba(225, 119, 26, 0.5); /* Utilise la même couleur semi-transparente */
+  background-color: #e1771a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,6 +265,9 @@
   background-color: #0056b3; /* Couleur de fond du bouton au survol */
 }
 
+.fa-map-location-dot {
+  height: auto;
+}
 // .category-menu {
 //   ul {
 //     list-style: none;
