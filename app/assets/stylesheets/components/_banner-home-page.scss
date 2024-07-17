@@ -42,6 +42,7 @@
   margin-top: 20px;
   text-align: center;
   width: 100%;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9)
 }
 
 .search-container {
@@ -103,7 +104,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 15px; /* Coins arrondis */
-  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.100); /* Ombre similaire à celle de la barre de recherche */
+  box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.250); /* Ombre similaire à celle de la barre de recherche */
   margin: 5px; /* Espace entre les carrés */
 }
 
