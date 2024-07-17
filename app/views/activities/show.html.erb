@@ -26,7 +26,10 @@
     <%# <% else %>
       <%# <%= link_to 'Add to Favorites', favorite_path(activity_id: @activity.id), method: :post %>
     <%# <% end %>
-
-    <%= button_to "Ajouter aux favoris", activity_favorites_path(@activity), class:'btn-activity-show', method: :post %>
+    <div class="btn-activity-show-form">
+      <%= button_to activity_favorites_path(@activity), method: :post, class: 'btn-activity-show' do %>
+        <!--<i class="fas fa-heart"></i>--> Ajouter aux favoris
+      <% end %>
+    </div>
   </div>
 </div>
