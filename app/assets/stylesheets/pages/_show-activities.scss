@@ -1,13 +1,31 @@
 .activity-card-show {
-  margin: 15px;
+  display: flex;
 }
 
-.title-activity-show {
-  margin: 30px;
-  font-size: 3.5rem;
+.img-container-activity {
+  margin: 5px;
+  height: 400px;
+  width: 680px;
+  background-size: cover;
+  background-position: center;
+  // display: flex; /* Ajout de Flexbox */
+  // justify-content: center; /* Centre horizontalement */
+  // align-items: center;
+
 }
 
-.description-activity-show p{
-  margin: 30px;
-  font-size: 16px;
+.text-overlay-show-activity {
+  width: 50%;
+  text-align: left;
+  color: black;
+  // z-index: 1;
+}
+
+.description-activity-show {
+  display: flex;
+  margin: 10px;
+}
+
+.form-activity-show {
+  margin: 5px;
 }

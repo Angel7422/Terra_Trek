@@ -11,43 +11,13 @@
   <% end %>
 
   <div class="form-field">
-    <%= form.label :first_name, class: "form-label" %>
-    <%= form.text_field :first_name, class: "form-control narrow-input", required: true %>
+    <%= form.label :start_date, "Date de début", class: "form-label" %>
+    <%= form.text_field :start_date, class: "form-control narrow-input datepicker", data: { controller: "datepicker" } %>
   </div>
 
   <div class="form-field">
-    <%= form.label :last_name, class: "form-label" %>
-    <%= form.text_field :last_name, class: "form-control narrow-input", required: true %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :email, class: "form-label" %>
-    <%= form.email_field :email, class: "form-control narrow-input", required: true %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :phone_number, class: "form-label" %>
-    <%= form.telephone_field :phone_number, class: "form-control narrow-input" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :start_date, "Start date", class: "form-label" %>
-    <%= form.text_field :start_date, class: "form-control narrow-input datepicker" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :end_date, "End date", class: "form-label" %>
-    <%= form.text_field :end_date, class: "form-control narrow-input datepicker" %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :adults, class: "form-label" %>
-    <%= form.number_field :adults, class: "form-control narrow-input", min: 0, required: true %>
-  </div>
-
-  <div class="form-field">
-    <%= form.label :children, class: "form-label" %>
-    <%= form.number_field :children, class: "form-control narrow-input", min: 0, required: true %>
+    <%= form.label :end_date, "Date de fin", class: "form-label" %>
+    <%= form.text_field :end_date, class: "form-control narrow-input datepicker", data: { controller: "datepicker" } %>
   </div>
 
   <div class="form-field">

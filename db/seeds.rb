@@ -53,8 +53,8 @@ end
 
 activity_4 = Activity.new(
   category: "Activites Nautiques",
-  name: "LOCATION D'UN KAYAK SIMPLE - CANNES - Mourre Rouge",
-  address: "PORT DU MOURE ROUGE06400 CANNES",
+  name: "Location Kayak - Mourre Rouge",
+  address: "Port du Moure Rouge, 06400 CANNES",
   latitude: 43.55135,
   longitude: 7.01275,
   description: "Le kayak simple est un support qui convient à tous et la Méditerranée est le lieu idéal pour sa pratique. Vous pourrez, au choix, longer la côte Est de Cannes et découvrir des contrées inconnues des touristes ou vous orienter vers l’île Sainte Marguerite et profiter de la vue sur la baie de Cannes loin du tumulte azuréen.
@@ -91,7 +91,7 @@ pictures5.each do |picture|
 end
 
 activity_6 = Activity.new(
-  category: "Expériences",
+  category: "Communaute",
   name: "Randonnée dans le Vercors",
   address: "",
   latitude: 44.841475,
@@ -107,7 +107,7 @@ pictures6.each do |picture|
 end
 
 activity_8 = Activity.new(
-  category: "Parcs",
+  category: "Communaute",
   name: "Square Reynaldo Hahn",
   address: "Square Reynaldo Hahn, 06400 Cannes",
   latitude: 43.55135, longitude: 7.01275,
@@ -123,7 +123,7 @@ end
 
 activity_9 = Activity.new(
   category: "Producteurs",
-  name: "FERME DES RAPILLES",
+  name: "Ferme des Rapilles",
   address: "97 chemin du Rivet, 38360, engins",
   description: "Productions de la ferme : Fromages : bleu du Vercors-Sassenage, Rapille, raclette, faisselles, beurre, St Sornin, tommette du Vercors,le petit enginois, la raclette
   Productions labellisées Agriculture biologique : 100 % de notre production sous label agriculture biologique",
@@ -158,7 +158,7 @@ pictures10.each do |picture|
 end
 
 activity_11 = Activity.new(
-  category: "Au marché",
+  category: "Producteurs",
   name: "Marché Europole",
   address: "Place Firmin Gautier, 38000 Grenoble",
   description: "Ce marché à lieu toute l'année le jeudi de 15h à 19h",
@@ -172,7 +172,7 @@ pictures11.each do |picture|
 end
 
 activity_12 = Activity.new(
-  category: "Au marché",
+  category: "Producteurs",
   name: "Marché Tublan",
   address: "Centre ville de Grenoble, 38000 Grenoble",
   description: "Ce marché à lieu toute l'année, du mardi au dimanche, de 8h à 13h",
@@ -187,7 +187,7 @@ end
 
 
 activity_13 = Activity.new(
-  category: "Au marché",
+  category: "Producteurs",
   name: "Marché des Eaux-Claires",
   address: "1 Rue Henri Dunant,38100 Grenoble",
   description: "Ce marché à lieu toute l'année, le mardi et jeudi, de 7h à 13h. Le samedi jusqu'à 13h30.",
@@ -231,7 +231,7 @@ pictures15.each do |picture|
 
 activity_16 = Activity.new(
   category: "Culture",
-  name: "Quiveutpister",
+  name: "Qui veut pister ?",
   address: "Place Bellecour, 69005 Lyon",
   latitude: 45.7542,
   longitude: 4.8309,
@@ -246,7 +246,7 @@ pictures16.each do |picture|
 end
 
 activity_17 = Activity.new(
-  category: "Nature",
+  category: "Communaute",
   name: "Le bois des Lutins",
   address: "La combe du loup, D 518 - 38790 Diémoz",
   latitude: 45.5367,
@@ -262,7 +262,7 @@ pictures17.each do |picture|
 end
 
 activity_18 = Activity.new(
-  category: "Au Marché",
+  category: "Producteurs",
   name: "Food Tour 'No Diet Club'",
   address: "Place de la Croix-Rousse",
   latitude: 45.774503,
@@ -301,7 +301,7 @@ pictures19.each do |picture|
 end
 
 activity_20 = Activity.new(
-  category: "Balades",
+  category: "Communaute",
   name: "Ascension du Mont Thou",
   address: "Mont Thou, 69450 Saint-Cyr-au-Mont-d'Or, France",
   latitude: "45.8416216",

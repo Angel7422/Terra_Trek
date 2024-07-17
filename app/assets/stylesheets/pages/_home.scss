@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .main-content {
@@ -10,80 +11,6 @@ html, body {
 }
 
 
-.cards-container {
-  position: relative;
-  z-index: 0;
-}
-
-
-.flip-card {
-  background-color: transparent;
-  width: 650px;
-  height: 292px;
-  // border-radius: 2px;
-
-}
-
-.flip-card-inner a, .text-agenda {
-  text-decoration: none !important;
-}
-
-.home-flex-top {
-  display: flex;
-}
-
-.home-flex-top-right {
-  flex-grow: 2;
-}
-
-.home-flex-bottom {
-  display: flex;
-}
-
-.flip-card-inner {
-  width: 100%;
-  height: 100%;
-  // transition: transform 0.8s;
-  // transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 4px;
-}
-
-// .flip-card:hover .flip-card-inner {
-//   transform: rotateY(180deg);
-// }
-
-.flip-card-front, .flip-card-back {
-  // position: relative;
-  width: 100%;
-  height: 100%;
-  // -webkit-backface-visibility: hidden;
-  // backface-visibility: hidden;
-  // border-radius: 4px;
-  // transition: transform 0.5s;
-}
-
-.flip-card-text {
-  font-size: 2rem; /* Taille de texte par défaut */
-  transition: transform 0.3s ease, font-size 0.3s ease;
-  z-index: 1; /* Assurez-vous que le texte est au-dessus de tout autre contenu */
-}
-
-.flip-card-front:hover .flip-card-text {
-  transform: scale(1.9); /* Agrandit le texte de 10% */
-  font-size: 2.5rem; /* Taille du texte agrandie lors du survol */
-}
-
-.flip-card-back {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  // transform: rotateY(180deg);
-  // font-family: fantasy;
-  font-size: 45px;
-  background-color: rgba(74, 235, 173, 0.047);
-}
 
 
 // .btn {

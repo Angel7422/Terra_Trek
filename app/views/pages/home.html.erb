@@ -26,10 +26,10 @@
 
   <div class="icon-container-home">
     <div class="icon-square"><a href="#decouvrez"><i class="icon-class fas fa-skiing"></i></a></div>
-    <div class="icon-square"><a href="#producteurs"><i class="icon-class fas fa-leaf"></i></a></div>
-    <div class="icon-square"><a href="#artisanies"><i class="icon-class fas fa-paint-brush"></i></a></div>
-    <a href="#communaute"><div class="icon-square"><i class="icon-class fas fa-users"></i></div></a>
-    <div class="icon-square"><a href="#agenda"><i class="icon-class fa-solid fa-calendar-days"></i></a></div>
+    <div class="icon-square"><%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %><i class="icon-class fas fa-leaf"></i><% end %></div>
+    <div class="icon-square"><%= link_to :controller => "activities", :filters => {:categories => "Artisans" } do %><i class="icon-class fas fa-paint-brush"></i><% end %></div>
+    <div class="icon-square"><%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %><i class="icon-class fas fa-users"></i><% end %></div>
+    <div class="icon-square"><%= link_to favorites_path do %><i class="icon-class fa-solid fa-calendar-days"></i><% end %></div>
   </div>
 
     </div>
@@ -50,7 +50,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Nature" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1719937864/licensed-image_drpt3q.jpg" %>')"
+                      url('<%= image_path "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                       >
             <p class="flip-card-back dancing-script-card flip-card-text">Nature</p>
           </div>
@@ -63,7 +63,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Excursions" } do %>
           <div class="flip-card-front"
               style="background-position: center; background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-                    url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194091/photo-1633265512358-bb6052d48a0f_qxtzkm.jpg" %>')"
+                    url('<%= image_path "https://images.unsplash.com/photo-1537646692914-61d73c4d6bad?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                     >
             <p class="flip-card-back dancing-script-card flip-card-text">Excursions</p>
           </div>
@@ -79,7 +79,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Culture" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720193465/photo-1620589125117-af1d850a302b_wmcbaf.jpg" %>')"
+                      url('<%= image_path "https://images.unsplash.com/photo-1676283898167-addc4238bee8?q=80&w=1618&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                       >
               <p class="flip-card-back dancing-script-card flip-card-text">Culture</p>
           </div>
@@ -92,7 +92,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Pour les enfants" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720551851/DD42E002-0AF3-4CC0-9C75-A279AC5B8ADC_1_105_c_u0quyz.jpg" %>')"
+                      url('<%= image_path "https://images.unsplash.com/photo-1717397199603-1d316cb68747?q=80&w=1718&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                       >
             <p class="flip-card-back dancing-script-card flip-card-text">Pour les enfants</p>
           </div>
@@ -129,7 +129,7 @@
   <div class="mosaique" id="producteurs">
 
     <div class="mosaiquex1" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946212/photo-1597362925123-77861d3fbac7_quxu9r.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1537721664796-76f77222a5d0?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
       <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
       <p class="dancing-script-card">Tradition</p>
       <% end %>
@@ -139,7 +139,7 @@
       <div class="mosaiquex2">
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720190659/photo-1590682680695-43b964a3ae17_ro8qb9.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
             <p class=" dancing-script-card">Passion</p>
            <% end %>
@@ -147,7 +147,7 @@
 
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720190683/photo-1471193945509-9ad0617afabf_gu9ru4.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
             <p class=" dancing-script-card">Circuit court</p>
           <% end %>
@@ -157,7 +157,7 @@
       <div class="mosaiquex2">
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720204607/photo-1461354464878-ad92f492a5a0_ce9may.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
             <p class=" dancing-script-card">Sans additifs</p>
           <% end %>
@@ -165,7 +165,7 @@
 
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720204615/photo-1594771804886-a933bb2d609b_l4dqp3.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1594771804886-a933bb2d609b?q=80&w=1764&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %>
           <p class=" dancing-script-card">Commerce équitable</p>
           <% end %>
@@ -190,7 +190,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Artisans" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207812/photo-1493106641515-6b5631de4bb9_rx2kjg.jpg" %>')"
+                      url('<%= image_path "https://images.unsplash.com/photo-1621846323386-a60faf26f962?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                       >
             <p class="flip-card-back dancing-script-card flip-card-text">Créativité</p>
           </div>
@@ -203,7 +203,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Artisans" } do %>
           <div class="flip-card-front"
               style="background-position: center; background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                    url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207736/premium_photo-1679811671226-9181616d7570_fa2k2p.jpg" %>')"
+                    url('<%= image_path "https://images.unsplash.com/photo-1521799022345-481a897e45ca?q=80&w=1529&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                     >
             <p class="flip-card-back dancing-script-card flip-card-text">Qualité</p>
           </div>
@@ -219,7 +219,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Artisans" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207830/photo-1675635425432-224e15ee6703_vg7bcl.jpg" %>')"
+                      url('<%= image_path "https://images.unsplash.com/photo-1698755681090-b18793ba9849?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                       >
               <p class="flip-card-back dancing-script-card flip-card-text">Authenticité</p>
           </div>
@@ -232,7 +232,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Artisans" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207786/photo-1661446562470-56b6b71c18df_egpied.jpg" %>')"
+                      url('<%= image_path "https://images.unsplash.com/photo-1621371205896-3082fa811d54?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                       >
             <p class="flip-card-back dancing-script-card flip-card-text">Expertise</p>
           </div>
@@ -245,7 +245,7 @@
         <%= link_to :controller => "activities", :filters => {:categories => "Artisans" } do %>
           <div class="flip-card-front"
                 style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720207867/photo-1641582163466-e4d573078f98_owf2sm.jpg" %>')"
+                      url('<%= image_path "https://images.unsplash.com/photo-1645739175668-3f269e7f46da?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')"
                       >
             <p class="flip-card-back dancing-script-card flip-card-text">Durabilité</p>
           </div>
@@ -268,7 +268,7 @@
 
     <div class="mosaique" id="communaute">
     <div class="mosaiquex1" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194415/photo-1569617084133-26942bb441f2_ox2wb9.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1484712401471-05c7215830eb?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
       <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
         <p class=" dancing-script-card">Partage</p>
       <% end %>
@@ -278,7 +278,7 @@
       <div class="mosaiquex2">
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194087/photo-1544735716-ea9ef790f501_ndmwrc.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1555019877-f3eb6deb89d1?q=80&w=2344&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
             <p class=" dancing-script-card">Respect</p>
           <% end %>
@@ -286,7 +286,7 @@
 
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194489/photo-1469571486292-0ba58a3f068b_nmmm4u.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1549062572-b4280938a25f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
             <p class=" dancing-script-card">Proximité</p>
           <% end %>
@@ -296,7 +296,7 @@
       <div class="mosaiquex2">
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1719946080/photo-1477239439998-839196943351_ilj8if.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
             <p class=" dancing-script-card">Échange</p>
           <% end %>
@@ -304,7 +304,7 @@
 
         <div class="photo-mosaiquex2"
           style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194389/photo-1548705085-101177834f47_crdw9y.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
           <%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %>
             <p class=" dancing-script-card">Dynamisme</p>
           <% end %>
@@ -363,12 +363,12 @@
 
   <div class="card-agenda" id="agenda">
     <div class="card-agendax2" style="background-position: bottom; background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720194389/photo-1548705085-101177834f47_crdw9y.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1524601500432-1e1a4c71d692?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
       <p class="dancing-script-card text-agenda flip-card-back flip-card-text">Explorez<br> Connectez <br> Vivez pleinement</p>
 
     </div>
     <div class="card-agendax2 flip-card-front" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                      url('<%= image_path "https://res.cloudinary.com/dtswvq8pg/image/upload/v1720191613/photo-1506784242126-2a0b0b89c56a_vhk6r4.jpg" %>')">
+                      url('<%= image_path "https://images.unsplash.com/photo-1586523903177-854b166f4514?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
     <%= link_to favorites_path, class: 'text-agenda' do %>
       <p class="dancing-script-card flip-card-back flip-card-front flip-card-text ">Réservez vos activités</p>
     <% end %>

@@ -5,12 +5,13 @@
  }
  /* Style pour la vidéo de fond */
  #bgVideo {
+  width: 460%;
   position: absolute;
   top: 36%;;
   left: 50%;
   // min-width: 100%;
   // min-height: 100%;
-  // width: 690%;
+
   // height: 200%;
   z-index: -1;
   transform: translate(-50%, -50%);
@@ -48,7 +49,7 @@
   top: 10px;
   right: 10px;
   display: flex;
-  background-color: rgba(225, 119, 26, 0.5);
+  background-color: #E1771A;
   padding: 10px;
   border-radius: 5px;
   z-index: 1;
@@ -65,6 +66,7 @@
 }
 
 .search-input::placeholder {
+  text-align: center;
   font-weight: 450; /* Ajuste la graisse de la police (300 est généralement une graisse fine) */
   color: #ffffff; /* Assure que la couleur du texte du placeholder est blanche */
   font-size: 16px; /* Ajuste la taille de la police si nécessaire */
@@ -96,7 +98,7 @@
 .icon-square {
   width: 50px; /* Taille des carrés */
   height: 50px;
-  background-color: rgba(225, 119, 26, 0.5); /* Utilise la même couleur semi-transparente */
+  background-color: #E1771A; /* Utilise la même couleur semi-transparente */
   display: flex;
   justify-content: center;
   align-items: center;
