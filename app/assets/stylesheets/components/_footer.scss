@@ -1,6 +1,6 @@
 /* app/assets/stylesheets/application.scss ou le fichier CSS où vous définissez vos styles */
 .footer {
-  background-color: #dbdee0; /* Couleur de fond claire (remplaçant bg-light) */
+  background-color: #ffffff; /* Couleur de fond claire (remplaçant bg-light) */
   padding: 10px 0; /* Espacement vertical autour du footer (remplaçant py-3) */
   text-align: center; /* Centre le texte (remplaçant text-center) */
   position: fixed; /* Position relative pour permettre des ajustements si nécessaire */
@@ -20,6 +20,6 @@
   color: #6c757d; /* Couleur du texte secondaire */
 }
 
-.fa-heart {
-  color: red; /* Couleur rouge pour l'icône de cœur */
-}
+// .fa-heart {
+//   color: red; /* Couleur rouge pour l'icône de cœur */
+// }

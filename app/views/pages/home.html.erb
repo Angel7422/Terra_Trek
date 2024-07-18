@@ -29,7 +29,7 @@
     <div class="icon-square"><%= link_to :controller => "activities", :filters => {:categories => "Producteurs"}, class: "stretched-link " do %><i class="icon-class fas fa-leaf"></i><% end %></div>
     <div class="icon-square"><%= link_to :controller => "activities", :filters => {:categories => "Artisans" } do %><i class="icon-class fas fa-paint-brush"></i><% end %></div>
     <div class="icon-square"><%= link_to :controller => "activities", :filters => {:categories => "Communaute"}, class: "stretched-link " do %><i class="icon-class fas fa-users"></i><% end %></div>
-    <div class="icon-square"><%= link_to favorites_path do %><i class="icon-class fa-solid fa-calendar-days"></i><% end %></div>
+    <div class="icon-square"><%= link_to bookings_path do %><i class="icon-class fa-solid fa-calendar-days"></i><% end %></div>
   </div>
 
     </div>
@@ -369,7 +369,7 @@
     </div>
     <div class="card-agendax2 flip-card-front" style="background-size: cover; width: 100%; height: 100%; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
                       url('<%= image_path "https://images.unsplash.com/photo-1586523903177-854b166f4514?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" %>')">
-    <%= link_to favorites_path, class: 'text-agenda' do %>
+    <%= link_to bookings_path, class: 'text-agenda' do %>
       <p class="dancing-script-card flip-card-back flip-card-front flip-card-text ">Réservez vos activités</p>
     <% end %>
     </div>
