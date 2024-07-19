@@ -5,7 +5,7 @@
 .img-container-activity {
   margin: 5px;
   height: 400px;
-  width: 680px;
+  width: 50%;
   background-size: cover;
   background-position: center;
   // display: flex; /* Ajout de Flexbox */
@@ -14,12 +14,43 @@
 
 }
 
-
-
-.right {
-  flex: 0 0 auto; /* Conserve sa taille naturelle */
-  width: 300px; /* Largeur fixe, ajuste selon tes besoins */
+.icon-show-container {
+  display: flex;
 }
+
+.title-activity-show h1 {
+  font-size: 1em;
+}
+
+.icon-show-activity {
+  margin-top: 21px;
+  margin-left: 25px;
+  color: #E1771A;
+  font-size: 20px;
+}
+
+.heartlike {
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 16px;
+  margin-top: 36px;
+  font-size: 20px;
+  color: #E1771A;
+}
+
+.heartlikeactive {
+  content: "\f004"; /* Code Unicode pour le cœur plein */
+  font-family: "Font Awesome 5 Free";
+}
+
+
+
+
+// .right {
+//   flex: 0 0 auto; /* Conserve sa taille naturelle */
+//   width: 300px; /* Largeur fixe, ajuste selon tes besoins */
+// }
 
 .text-overlay-show-activity {
   width: 50%;
@@ -41,6 +72,11 @@
 .description-activity-show {
   display: flex;
   margin: 15px;
+}
+
+.carnet-activity-show {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .form-container-activity-show {

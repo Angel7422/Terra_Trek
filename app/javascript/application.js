@@ -4,3 +4,7 @@ import "controllers"
 import "@popperjs/core"
 import "bootstrap"
 import "@rails/actioncable"
+
+document.addEventListener("turbo:load", () => {
+  $('[data-toggle="tooltip"]').tooltip({placement: 'left', html: true})
+})

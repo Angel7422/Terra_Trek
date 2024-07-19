@@ -112,6 +112,27 @@
   font-size: 24px; /* Taille des icônes */
 }
 
+.icon-tooltipe {
+  font-size: 20px;
+  background-color: #E1771A !important;
+  color: white;
+}
+
+.bs-tooltip-left .arrow::before, .bs-tooltip-auto[x-placement^="left"] .arrow::before {
+   border-color: #E1771A !important;
+
+}
+
+.tooltip-inner {
+  border: 2px solid #E1771A !important; /* Change #yourBorderColor to your desired color */
+  background-color: #E1771A !important;
+  color: #E1771A;
+}
+
+.tooltip-arrow {
+  border-left-color: #E1771A !important;
+}
+
 .container-home {
   max-width: 100%;
   margin: 0 auto;
