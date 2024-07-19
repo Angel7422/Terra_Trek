@@ -19,7 +19,7 @@ user.save
 puts 'Creating activities...'
 
 activity_1 = Activity.new(
-  category: "Excursions",
+  category: "Activites",
   name: "Excursion Nautique Cannes",
   address: "110 Boulevard du Midi Louise Moreau, Cannes",
   description: "Embarquez sur nos bateaux depuis le port du Béal et longez la célèbre Côte d’Azur direction Antibes, destination incontournable qui attire 3 millions de visiteurs par an !
@@ -36,7 +36,7 @@ pictures1.each do |picture|
 end
 
 activity_2 = Activity.new(
-  category: "Visites",
+  category: "Activites",
   name: "Balade culturelle",
   address: "1 Place Bernard Cornut Gentille, Cannes",
   description: "Une visite de Cannes, sympathique et décontractée, pour voir l’essentiel de cette jolie petite ville… De la croisette à la vieille ville, en passant par le port et quelques boutiques de produits locaux où nous aurons le temps de déguster des spécialités locales.
@@ -52,7 +52,7 @@ end
 
 
 activity_4 = Activity.new(
-  category: "Activites Nautiques",
+  category: "Activites",
   name: "Location Kayak - Mourre Rouge",
   address: "Port du Moure Rouge, 06400 CANNES",
   latitude: 43.55135,
@@ -74,7 +74,7 @@ pictures4.each do |picture|
 end
 
 activity_5 = Activity.new(
-  category: "Pour les enfants",
+  category: "Activites",
   name: "Les îles de Lérins",
   address: "06400 Cannes",
   latitude: 43.55135,
@@ -201,7 +201,7 @@ pictures13.each do |picture|
 end
 
 activity_14 = Activity.new(
-  category: "Musées",
+  category: "Activites",
   name: "Musée des Beaux-Arts de Lyon",
   address: "20 Place des Terreaux, 69001 Lyon France",
   description: "Une visite au Musée des Beaux-Arts de Lyon est un must pour les amateurs d'art. Découvrez les œuvres de Picasso, Rodin, El Greco et bien plus encore. Pour une entrée gratuite à ce musée et à d'autres attractions de la ville, pensez au «Lyon City Card».",
@@ -216,7 +216,7 @@ pictures14.each do |picture|
 end
 
 activity_15 = Activity.new(
-  category: "Musées",
+  category: "Activites",
   name: "Musée Miniature et Cinéma",
   address: "60 rue Saint Jean, 69005 Lyon France",
   description: "Visitez les coulisses de vos films préférés au Musée Miniature et Cinéma. Des accessoires et costumes à une collection de scènes miniatures complexes, il y en a pour toute la famille. Pensez à acheter vos billets à l'avance pour gagner du temps et éviter les files d'attente.",
@@ -230,7 +230,7 @@ pictures15.each do |picture|
   end
 
 activity_16 = Activity.new(
-  category: "Culture",
+  category: "Activites",
   name: "Qui veut pister ?",
   address: "Place Bellecour, 69005 Lyon",
   latitude: 45.7542,
