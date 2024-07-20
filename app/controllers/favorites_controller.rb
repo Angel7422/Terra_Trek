@@ -10,7 +10,7 @@ class FavoritesController < ApplicationController
     @activity = Activity.find(params[:activity_id])
     @favorite = Favorite.new(user: @current_user, activity: @activity)
     @favorite.save
-    redirect_to activities_path(city: 'lyon'), notice: "Favorie ajouté!"
+    redirect_to activities_path(city: params[:city]), notice: "Favorie ajouté!"
   end
 
   def destroy

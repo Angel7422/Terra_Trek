@@ -27,7 +27,7 @@
       <%# <%= link_to 'Add to Favorites', favorite_path(activity_id: @activity.id), method: :post %>
     <%# <% end %>
     <div class="btn-activity-show-form">
-      <%= button_to activity_favorites_path(@activity), method: :post, class: 'btn-activity-show' do %>
+      <%= button_to activity_favorites_path(@activity, city: params[:city]), method: :post, class: 'btn-activity-show' do %>
         <!--<i class="fas fa-heart"></i>--> Ajouter aux favoris
       <% end %>
     </div>

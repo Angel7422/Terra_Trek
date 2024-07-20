@@ -1,12 +1,60 @@
+.row-favoris {
+  display: flex;
+}
+
 .text-orange {
-  color: orange;
+  color: $orange;
 }
 
-.border-orange {
-  border-bottom: 4px dotted orange;
+.img-favoris {
+  border-bottom: 6px dotted $orange;
+  border-radius: 16px 16px 0 0;
 }
 
-.border-none {
-  border-style: none;
+.link:link {
+  text-decoration: none;
+  color: black;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 30px;
+}
+
+.card-text-favoris {
+  color: black;
+}
+
+.row-favoris {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  row-gap: 30px;
+}
+
+.card-favoris {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 500px;
+  width: 100%;
+  border: 2px solid $orange;
+  border-radius: 16px;
+}
+
+.button-favoris {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   background-color: white;
+  border: none;
+}
+
+.header-space {
+  font-size: 3.5rem;
+  margin: 40px;
+  margin-bottom: 35px;
+  padding-left: 0px;
+  padding-right: 350px;
 }
