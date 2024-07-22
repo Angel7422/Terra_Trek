@@ -50,7 +50,7 @@
         <h1 class="title-index-activity">Désolé, votre activité n'est pas disponible</h1>
       <% else %>
         <% @activities.each do |activity| %>
-          <%= link_to activity_path(activity), class: 'card-activity-link' do %>
+          <%= link_to activity_path(activity, city: params[:city]), class: 'card-activity-link' do %>
             <div class="card-activity">
               <% if activity.pictures.present? %>
                 <%= cl_image_tag activity.pictures.first.key, class: "d-block w-100", height: 300, width: 400 %>

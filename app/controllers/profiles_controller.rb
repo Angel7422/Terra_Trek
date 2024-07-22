@@ -8,7 +8,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    raise
     if @profile.update(profile_params)
       redirect_to profile_path(@profile), notice: 'Profil mis à jour avec succès.'
     else

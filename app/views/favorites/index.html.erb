@@ -1,17 +1,26 @@
 
-<h1>Favorites</h1>
+<h1 class="header-space">Favoris</h1>
 
-<ul>
-  <% @favorites.each do |favorite| %>
+  <div class="container-favoris">
+    <div class="row-favoris">
+      <% @favorites.each do |favorite| %>
+        <div class="col">
+          <div class="card-favoris">
+            <%= cl_image_tag favorite.activity.pictures.first.key, class: "img-favoris", height: 250, width: '100%', crop: :fill %>
 
-    <li>
-      <%= favorite.activity.name %> <br>
-      <%= favorite.activity.description%>
 
-      <%= button_to "Delete",
-          activity_favorite_path(favorite.activity, favorite),
-          method: :delete, data: {tubro_method: :delete, turbo_confirm: "Es-tu sur?"}%>
-    </li>
+              <%= link_to activity_path(favorite.activity), class: "link" do %>
+                <h5 class="card-title"><%= favorite.activity.name %></h5>
+                <p class="card-text-favoris"><%= truncate(favorite.activity.description, length: 100) %></p>
+                <p class="text-orange">Résérvez maintenant...</p>
+              <% end %>
 
-  <% end %>
-</ul>
+              <%= button_to "Retirez des favoris", activity_favorite_path(favorite.activity, favorite),
+                  method: :delete, data: {tubro_method: :delete, turbo_confirm: "Etes vous sûr ?"},
+                  class: "button-favoris" %>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
