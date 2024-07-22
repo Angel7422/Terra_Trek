@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to activity_path(@booking.activity)
+    redirect_to bookings_path, notice: 'La suppression a été effectuée avec succès'
   end
 
   private

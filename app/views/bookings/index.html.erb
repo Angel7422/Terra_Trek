@@ -1,10 +1,22 @@
 <div class="container-index-bookings">
   <div class="header-section-bookings">
     <h1>Mon Carnet de Route</h1>
-    <h1>Juillet</h1>
-    <p>Vue d'ensemble des activités réservées</p>
-    <%# <p class="month-display"><%= @start_date.strftime("%B").capitalize %></p>
+    <br>
+    <h2>Juillet 2024</h2>
+
+    <%# <p class="month-display"><%= I18n.l(@start_date, format: "%B %Y") %></p>
   </div>
+
+ <div class="summary-text">
+  <% unique_cities = @bookings.map { |b| b.activity.city }.uniq %>
+  <% city_count = unique_cities.count %>
+  <% if city_count > 1 %>
+    <% cities_display = unique_cities[0...-1].join(', ') + " et " + unique_cities[-1] %>
+  <% else %>
+    <% cities_display = unique_cities.join(', ') %>
+  <% end %>
+  Vous avez <%= @bookings.count %> activité(s) de prévu(s) ce mois-ci à <%= cities_display %> 🎉
+</div>
 
   <div class="calendar-frame center">
     <% start_day = @start_date.beginning_of_month.wday %>
@@ -13,17 +25,29 @@
     <% (1..end_day).each do |day| %>
       <% date = Date.new(@start_date.year, @start_date.month, day) %>
       <% bookings_on_day = @bookings.select { |b| b.start_date <= date && b.end_date >= date } %>
-      <% activity_picture = bookings_on_day.first&.activity&.pictures&.first&.key %>
-      <div class="day-frame center real" style="background-image: url(<%= activity_picture ? cl_image_path(activity_picture) : '' %>); background-color: <%= activity_picture ? 'transparent' : '#f0f0f0' %>;">
-        <h2 class="day-number"><%= day %></h2>
-        <div class="overlay">
-          <div class="day-label center">
-            <% bookings_on_day.each do |booking| %>
-              <%= booking.activity.name %><br>
-            <% end %>
+      <% activity = bookings_on_day.first&.activity %>
+      <% activity_picture = activity&.pictures&.first&.key %>
+      <% activity_city = activity&.city %>
+
+      <% if activity.present? %>
+        <div class="day-frame center real" style="background-image: url(<%= activity_picture ? cl_image_path(activity_picture) : '' %>); background-color: <%= activity_picture ? 'transparent' : '#f0f0f0' %>;">
+          <h2 class="day-number"><%= day %></h2>
+          <div class="overlay">
+            <div class="day-label center">
+              <% bookings_on_day.each do |booking| %>
+                <%= link_to booking.activity.name, booking_path(booking), class: 'activity-title' %><br>
+              <% end %>
+            </div>
+            <div class="city-label">
+              <%= activity_city %>
+            </div>
           </div>
         </div>
-      </div>
+      <% else %>
+        <div class="day-frame center real" style="background-color: #f0f0f0;">
+          <h2 class="day-number"><%= day %></h2>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
