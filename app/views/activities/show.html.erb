@@ -9,10 +9,33 @@
 </div>
 
 <div class="description-activity-show">
+
   <div class="text-overlay-show-activity left">
-    <h1 class="title-activity-show"><%= @activity.name %></h1>
+    <div class="icon-show-container">
+      <div class="title-activity-show">
+        <h1 class="title-activity-show"><%= @activity.name %></h1>
+      </div>
+      <div class="icon-show-activity">
+      <i class="icon-show-activity <%= @activity.category_icon %>"></i>
+      </div>
+      <div class="heartlike">
+        <% if @activity.favorite?(current_user) %>
+          <%= link_to activity_favorite_path(@activity, current_user.favorite(@activity)), data: { turbo_method: :delete } do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to activity_favorites_path(@activity), data: {turbo_method: :post } do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <%= @activity.category %>
     <p><%= @activity.description %></p>
   </div>
+
+
+
 
 
   <div data-controller="toggle" class='form-container-activity-show form-activity-show right'>
@@ -26,10 +49,5 @@
     <%# <% else %>
       <%# <%= link_to 'Add to Favorites', favorite_path(activity_id: @activity.id), method: :post %>
     <%# <% end %>
-    <div class="btn-activity-show-form">
-      <%= button_to activity_favorites_path(@activity, city: params[:city]), method: :post, class: 'btn-activity-show' do %>
-        <!--<i class="fas fa-heart"></i>--> Ajouter aux favoris
-      <% end %>
-    </div>
   </div>
 </div>

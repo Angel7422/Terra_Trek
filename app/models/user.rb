@@ -22,10 +22,15 @@ class User < ApplicationRecord
 
   # has_one_attached :photo
 
+  def favorite(activity)
+    favorites.where(activity: activity).first
+  end
+
   private
 
   def create_profile
     Profile.create(user: self)
   end
+
 
 end

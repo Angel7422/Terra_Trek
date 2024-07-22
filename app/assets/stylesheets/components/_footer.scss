@@ -3,7 +3,7 @@
   background-color: #ffffff; /* Couleur de fond claire (remplaçant bg-light) */
   padding: 10px 0; /* Espacement vertical autour du footer (remplaçant py-3) */
   text-align: center; /* Centre le texte (remplaçant text-center) */
-  position: fixed; /* Position relative pour permettre des ajustements si nécessaire */
+  // position: relative; /* Position relative pour permettre des ajustements si nécessaire */
   width: 100%; /* Assure que le footer prend toute la largeur */
   bottom: 0; /* Optionnel: place le footer au bas de la page si vous utilisez position: fixed */
   z-index: 0;
@@ -12,7 +12,8 @@
 .footer-container {
   max-width: 1200px; /* Optionnel: définit une largeur maximale pour le contenu */
   margin: 0 auto; /* Centre le conteneur horizontalement */
-  padding: 0 15px; /* Ajoute du padding horizontal */
+  margin-top: 25px;
+  padding:  25px 25px; /* Ajoute du padding horizontal */
 }
 
 .footer-text {
