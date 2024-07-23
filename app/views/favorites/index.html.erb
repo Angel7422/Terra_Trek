@@ -15,7 +15,7 @@
                 <p class="text-orange">Résérvez maintenant...</p>
               <% end %>
 
-              <%= button_to "Retirez des favoris", activity_favorite_path(favorite.activity, favorite),
+              <%= button_to "Retirer des favoris", activity_favorite_path(favorite.activity, favorite),
                   method: :delete, data: {tubro_method: :delete, turbo_confirm: "Etes vous sûr ?"},
                   class: "button-favoris" %>
 
