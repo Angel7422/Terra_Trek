@@ -8,13 +8,16 @@
 
     <div class="header-section-activity">
       <div style="display: flex; justify-content: space-between;">
-      <h1 style="float: left">Explorez une variété d'activités</h1>
-      <div class="icon-container-activity">
-    <div class="icon-square-activity" data-action="click->filterform#toggleFilterForm"><a href="#filtrer"><i class="icon-class fa fa-filter"></i></a></div>
-    </div>
-      <h1 style="float: right"><%= params[:city].present? ? params[:city] : '' %></h1>
+        <h1 style="float: left">Explorez une variété d'activités</h1>
+        <div class="icon-container-activity">
+          <div class="icon-square-activity" data-action="click->filterform#toggleFilterForm">
+            <a href="#filtrer"><i class="icon-class fa fa-filter"></i></a>
+          </div>
+        </div>
+        <h1 style="float: right"><%= params[:city].present? ? params[:city] : '' %></h1>
       </div>
     </div>
+
     <!-- Filter form -->
     <div class="filter-container-activity hidden" data-filterform-target="filterForm">
       <div class="filter-form-categories">
@@ -33,7 +36,7 @@
         <% end %>
       </div>
     </div>
-  </div>
+  </div> <!-- End of filterform -->
 
   <div class="content-section">
     <div id="activity-map" data-controller="map"
@@ -41,11 +44,12 @@
       data-map-markers-value="<%= @markers.to_json %>"
       style="border: 1px solid black;">
     </div>
-      <div class="fixed-image-container">
-    <%#= image_tag 'LogoTerra', class:'img-logo-index' %>
-  </div>
 
-<div class="cards-activities-container">
+    <div class="fixed-image-container">
+      <%#= image_tag 'LogoTerra', class:'img-logo-index' %>
+    </div>
+
+    <div class="cards-activities-container">
       <% if @activities.empty? %>
         <h1 class="title-index-activity">Désolé, votre activité n'est pas disponible</h1>
       <% else %>
@@ -61,7 +65,9 @@
                 <h2 class="name-activity"><%= activity.name %></h2>
                 <div class="overlay">
                   <p class="description-activity"><%= truncate(activity.description, length: 120) %></p>
-                  <button class="btn-view-map" data-id="<%= activity.id %>"><i class="fa fa-map-location-dot"></i></button>
+                  <button class="btn-view-map" data-id="<%= activity.id %>">
+                    <i class="fa fa-map-location-dot"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -69,11 +75,13 @@
         <% end %>
       <% end %>
     </div>
-    <br>
-    <br>
-  </div>
 
-</div>
+    <br>
+    <br>
+  </div> <!-- End of content-section -->
+
+</div> <!-- End of container-index-activity -->
+
 
 
 
