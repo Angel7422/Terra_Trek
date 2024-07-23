@@ -15,29 +15,32 @@
 }
 
 .icon-show-container {
+  align-items: center;
   display: flex;
+  justify-content: space-between;
 }
 
 .title-activity-show h1 {
   font-size: 1em;
 }
 
-.icon-show-activity {
-  margin-top: 21px;
-  margin-left: 25px;
+.icons-show-activity {
+  align-items: center;
+  display: flex;
+  gap: 16px;
   color: #E1771A;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-.heartlike {
-  border: transparent;
-  background-color: transparent;
-  cursor: pointer;
-  margin-left: 16px;
-  margin-top: 36px;
-  font-size: 20px;
-  color: #E1771A;
-}
+// .heartlike {
+//   border: transparent;
+//   background-color: transparent;
+//   cursor: pointer;
+//   margin-left: 16px;
+//   margin-top: 36px;
+//   font-size: 20px;
+//   color: #E1771A;
+// }
 
 .heartlikeactive {
   content: "\f004"; /* Code Unicode pour le cœur plein */
@@ -67,6 +70,7 @@
 .text-overlay-show-activity p {
   margin-top: 20px;
   font-size: 20px;
+  text-align: justify;
 }
 
 .description-activity-show {

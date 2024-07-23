@@ -32,5 +32,4 @@ class Activity < ApplicationRecord
       "fas fa-utensils"
     end
   end
-
 end
