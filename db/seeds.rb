@@ -353,12 +353,12 @@ end
 
 activity_22 = Activity.new(
   category: "Activites",
-  name: "Lancer De Hache - L'HACHEZ-VOUS",
+  name: " L'hachez-vous",
   address: "4 Rue de l'Épée, 69003 Lyon France",
   city: "Lyon",
   latitude: "45.7568283",
   longitude: "4.8431428",
-  description: "LancerdehacheLyon est le premier centre à Lyon, où vous avez le droit de lancer des haches ! Grâce à nos conseils, étonnez vos amis et soyez le plus fort ! Nous disposons de 6 cibles, permettant d'accueillir jusqu’à 18 personnes par session d'une heure. Le lancer de haches est idéal pour une sortie entre amis, un anniversaire, un EVJF / EVJG, un team building, où même un rendez-vous galant !",
+  description: "Lancer de hache pour Lyon est le premier centre à Lyon, où vous avez le droit de lancer des haches ! Grâce à nos conseils, étonnez vos amis et soyez le plus fort ! Nous disposons de 6 cibles, permettant d'accueillir jusqu’à 18 personnes par session d'une heure. Le lancer de haches est idéal pour une sortie entre amis, un anniversaire, un EVJF / EVJG, un team building, où même un rendez-vous galant !",
   user: user
 )
 pictures22 = ['https://images.unsplash.com/photo-1620303008348-afff3cc06891?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aGFjaGV8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1444228250525-3d441b642d12?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXhlJTIwdGFyZ2V0fGVufDB8fDB8fHww']
@@ -468,7 +468,7 @@ end
 
 activity_28 = Activity.new(
   category: "Artisans",
-  name: "7ici Atelier-Boutique",
+  name: "Ici Atelier-Boutique",
   address: "1 rue des Capucins - 69001 Lyon 1er",
   city: "Lyon",
   latitude: "45.7693565",
