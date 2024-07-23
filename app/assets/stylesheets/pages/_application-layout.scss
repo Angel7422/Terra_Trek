@@ -1,0 +1,54 @@
+@media (max-width: 960px) {
+  /* Pour un écran < 960px, cette classe CSS s'applique */
+  .main-content {
+    width: 700px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* Pour un écran < 720px, cette classe CSS s'applique */
+  .main-content {
+    width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* Pour un écran < 540px, cette classe CSS s'applique */
+  .main-content {
+    width: 300px;
+  }
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Media Queries for images if needed */
+@media (max-width: 960px) {
+  .img {
+    width: 100%; /* Take full width for smaller screens */
+  }
+  .img {
+    height: auto; /* Ensure the height adjusts automatically */
+  }
+}
+
+@media (max-width: 720px) {
+  .img {
+    width: 100%; /* Take full width for smaller screens */
+  }
+  .img {
+    height: auto; /* Ensure the height adjusts automatically */
+  }
+}
+
+@media (max-width: 540px) {
+  .img {
+    width: 100%; /* Take full width for smaller screens */
+  }
+  .img {
+    height: auto; /* Ensure the height adjusts automatically */
+  }
+}
