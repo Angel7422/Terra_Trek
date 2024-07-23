@@ -17,7 +17,7 @@
 
   h1 {
     font-size: 3.5rem;
-    margin: 40px;
+    margin-top: 30px;
     margin-bottom: 35px;
     padding-left: 20px;
     padding-right: 20px;
@@ -46,6 +46,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .content-section {
@@ -74,6 +75,7 @@
     transition: transform 0.3s;
     position: relative;
     overflow: hidden;
+    margin-bottom: 20px;
 
     .name-activity {
       position: absolute;
@@ -199,7 +201,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 15px; /* Coins arrondis */
-  box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.396); /* Ombre similaire à celle de la barre de recherche */
+  box-shadow: 0.5px 0.5px 1px 1px rgba(5, 5, 5, 0.396); /* Ombre similaire à celle de la barre de recherche */
   margin: 40px; /* Espace entre les carrés */
 }
 

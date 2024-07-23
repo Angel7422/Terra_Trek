@@ -7,7 +7,7 @@
   flex-direction: row;
   align-items: center;
   margin-bottom: 16px;
-  box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
 
   // p {
   //   color: white;
@@ -26,9 +26,11 @@
   color: white;
 }
 .navbar-terra .navbar-nav .nav-link {
+  font-weight: 700;
+  letter-spacing: 1.5px;
   color: white;
   font-family: "Dancing Script", cursive;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   margin-right: 1rem;
 }
 .navbar-terra .navbar-collapse {
@@ -37,7 +39,7 @@
 }
 
 .navbar-terra .navbar-brand img {
-  width: 45px;
+  width: 50px;
 }
 
 .custom-nav-item .nav-link {
