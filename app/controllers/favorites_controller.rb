@@ -10,13 +10,13 @@ class FavoritesController < ApplicationController
     @activity = Activity.find(params[:activity_id])
     @favorite = Favorite.new(user: @current_user, activity: @activity)
     @favorite.save
-    redirect_back fallback_location: activity_path(@activity), notice: "Favoris ajouté!"
+    redirect_back fallback_location: activity_path(@activity), notice: "Favori ajouté!"
   end
 
   def destroy
     @activity = Activity.find(params[:activity_id])
     @favorite = Favorite.find(params[:id]).destroy
-    redirect_back fallback_location: activity_path(@activity), notice: "Supprimé!"
+    redirect_back fallback_location: activity_path(@activity), notice: "Favori supprimé!"
   end
 
   private
