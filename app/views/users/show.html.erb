@@ -1,10 +1,8 @@
-<div class="container">
+<div class="container container-profile-show">
   <h2>Profil de <%= @user.nickname %></h2>
-
   <p>Email: <%= @user.email %></p>
   <p>Surnom: <%= @user.nickname %></p>
   <p>Description: <%= @user.description %></p>
   <p>Adresse: <%= @user.address %></p>
-
   <%= link_to 'Editer le profil', edit_user_path(@user), class: 'btn btn-primary' %>
 </div>
