@@ -1,26 +1,28 @@
 
 <h1 class="header-space">Favoris</h1>
-
-  <div class="container-favoris">
-    <div class="row-favoris">
-      <% @favorites.each do |favorite| %>
-        <div class="col">
-          <div class="card-favoris">
-            <%= cl_image_tag favorite.activity.pictures.first.key, class: "img-favoris", height: 250, width: '100%', crop: :fill %>
-
-
-              <%= link_to activity_path(favorite.activity), class: "link" do %>
-                <h5 class="card-title"><%= favorite.activity.name %></h5>
-                <p class="card-text-favoris"><%= truncate(favorite.activity.description, length: 100) %></p>
-                <p class="text-orange">Résérvez maintenant...</p>
-              <% end %>
-
-              <%= button_to "Retirer des favoris", activity_favorite_path(favorite.activity, favorite),
-                  method: :delete, data: {tubro_method: :delete, turbo_confirm: "Etes vous sûr ?"},
-                  class: "button-favoris" %>
-
-          </div>
+<div class="container-favoris">
+  <div class="row-favoris">
+    <% @favorites.each do |favorite| %>
+      <div class="col">
+        <div class="card-favoris">
+          <% if favorite.activity.pictures.any? %>
+            <% image_url = cl_image_path(favorite.activity.pictures.first.key, crop: :fill) %>
+            <div class="img-container-activity" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.1)), url(<%= image_url %>); height: 250px; width: 97%; background-size: cover; background-position: center;">
+            </div>
+          <% else %>
+            <div class="img-container-activity" style="background-image: url('/path/to/default-image.jpg'); height: 250px; width: 100%; background-size: cover; background-position: center;">
+            </div>
+          <% end %>
+          <%= link_to activity_path(favorite.activity), class: "link" do %>
+            <h5 class="card-title"><%= favorite.activity.name %></h5>
+            <p class="card-text-favoris"><%= truncate(favorite.activity.description, length: 100) %></p>
+            <p class="text-orange">Réservez maintenant...</p>
+          <% end %>
+          <%= button_to "Retirer des favoris", activity_favorite_path(favorite.activity, favorite),
+              method: :delete, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr ?" },
+              class: "button-favoris" %>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
+</div>
