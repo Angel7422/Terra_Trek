@@ -16,7 +16,7 @@
           <%= link_to activity_path(favorite.activity), class: "link" do %>
             <h5 class="card-title"><%= favorite.activity.name %></h5>
             <p class="card-text-favoris"><%= truncate(favorite.activity.description, length: 100) %></p>
-            <p class="text-orange">Réservez maintenant...</p>
+            <p class="text-orange">Réservez par ici</p>
           <% end %>
           <%= button_to "Retirer des favoris", activity_favorite_path(favorite.activity, favorite),
               method: :delete, data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr ?" },

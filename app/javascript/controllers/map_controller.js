@@ -68,7 +68,7 @@ export default class extends Controller {
         popupContent += `<img src="${marker.imageUrl}" style="width: 100%">`
       }
       if (marker.id) {
-        popupContent += `<button onclick="window.location.href = '/activities/${marker.id}'">Ajouter au Carnet</button>`
+        popupContent += `<button onclick="window.location.href = '/activities/${marker.id}'">Voir plus</button>`
       }
       popupContent += `</div>`
 
